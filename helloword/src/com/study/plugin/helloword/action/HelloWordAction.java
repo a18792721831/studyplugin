@@ -29,8 +29,8 @@ public class HelloWordAction extends AnAction {
         Notification toolWindowNotification = toolWindow.createNotification("helloword-toolWindow", NotificationType.INFORMATION);
         Notification noneNotificattion = none.createNotification("helloword-none", NotificationType.INFORMATION);
         // 将通知放入通知总线
-//        Notifications.Bus.notify(balloonNotification);
-//        Notifications.Bus.notify(sitskyBalloonNotification);
+        Notifications.Bus.notify(balloonNotification);
+        Notifications.Bus.notify(sitskyBalloonNotification);
         Notifications.Bus.notify(toolWindowNotification);
         Notifications.Bus.notify(noneNotificattion);
     }
