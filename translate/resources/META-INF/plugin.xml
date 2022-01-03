@@ -1,0 +1,41 @@
+<idea-plugin>
+  <id>com.study.plugin.translate</id>
+  <name>translate</name>
+  <version>1.0</version>
+  <vendor email="supp1ort@yourcompany.com" url="http://www.you1rcompany.com">You1rCompany</vendor>
+
+  <description><![CDATA[
+      翻译：选中中文，按下<b>ctrl + alt + ;</b>自动替换为英文<br/>
+      这只是一个学习的插件项目<br/>
+
+    ]]></description>
+
+  <change-notes><![CDATA[
+      version1: translate
+    ]]>
+  </change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <notificationGroup displayType="BALLOON" id="simpleconfig.notification.balloon" isLogByDefault="false"/>
+    <applicationConfigurable parentId="tools" instance="com.study.plugin.translate.config.TranslateAppInfoConfig"
+                             id="com.study.plugin.translate。setting.config.id" displayName="在线翻译信息"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="com.study.plugin.translate.action.id" class="com.study.plugin.translate.action.TranslateAction"
+            text="翻译" description="翻译">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt SEMICOLON"/>
+    </action>
+  </actions>
+
+</idea-plugin>
