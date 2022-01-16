@@ -1,17 +1,10 @@
 <idea-plugin require-restart="true">
   <id>com.study.plugin.sedentaryreminder</id>
-  <name>编程久坐提醒</name>
+  <name>codingSedentaryReminder</name>
   <version>1.0</version>
   <vendor email="2205105579@qq.com" url="https://blog.csdn.net/a18792721831">a18792721831</vendor>
 
   <description><![CDATA[
-      编程开发常常忘记了时间的流逝，等到察觉的时候，已经连续久坐好长时间？<br/>
-      久坐提醒就是防止你沉迷开发无法自拔，提醒你该活动一下了！<br/>
-      每次编程时间累积计算，到了时间就会提醒或强制休息，重启idea也无法豁免，第二天又会重新累积。<br/>
-      你可以配置强制休息，也可以配置提醒休息。<br/>
-      也可以配置今日跳过。<br/>
-      可以自定义编程时间(1小时内)和休息时间。<br/>
-      到了休息的时候，别想着编程，休息吧，程序员！<br/>
       Programming developers often forget the passage of time, and by the time they notice it, they have been sitting for a long time?<br/>
       Sedentary reminders are to prevent you from being addicted to development and can't extricate yourself, reminding you that it is time to do it!<br/>
       Each time the programming time is cumulatively calculated, the time will be reminded or forced to rest, and the restart idea cannot be exempted, and it will be accumulated again the next day. <br/>
@@ -19,6 +12,13 @@
       You can also configure today's skip. <br/>
       Programming time (within 1 hour) and rest time can be customized. <br/>
       When it's time to rest, don't think about programming, take a break, programmer! <br/>
+      编程开发常常忘记了时间的流逝，等到察觉的时候，已经连续久坐好长时间？<br/>
+      久坐提醒就是防止你沉迷开发无法自拔，提醒你该活动一下了！<br/>
+      每次编程时间累积计算，到了时间就会提醒或强制休息，重启idea也无法豁免，第二天又会重新累积。<br/>
+      你可以配置强制休息，也可以配置提醒休息。<br/>
+      也可以配置今日跳过。<br/>
+      可以自定义编程时间(1小时内)和休息时间。<br/>
+      到了休息的时候，别想着编程，休息吧，程序员！<br/>
     ]]></description>
 
   <change-notes><![CDATA[
