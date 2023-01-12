@@ -1,7 +1,7 @@
 <idea-plugin require-restart="true">
   <id>com.study.plugin.sedentaryreminder</id>
-  <name>codingSedentaryReminder</name>
-  <version>1.0</version>
+  <name>Coding Sedentary Reminder</name>
+  <version>4.0</version>
   <vendor email="2205105579@qq.com" url="https://blog.csdn.net/a18792721831">a18792721831</vendor>
 
   <description><![CDATA[
@@ -22,12 +22,15 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      version1:久坐提醒
+      version1:Complete Basic Functions
+      version2:Remove The Idea Detection Warning
+      version3:Modify Plugin Name And Description
+      version4:change name and since idea version
     ]]>
   </change-notes>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="193.0"/>
+  <idea-version since-build="203.0"/>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
@@ -43,21 +46,6 @@
   <actions>
     <!-- Add your actions here -->
   </actions>
-
-<!--  <application-components>-->
-<!--    <component>-->
-<!--      <implementation-class>com.study.plugin.sedentaryreminder.components.MyApplicationComponent</implementation-class>-->
-<!--    </component>-->
-<!--  </application-components>-->
-<!--  <project-components>-->
-<!--    <component>-->
-<!--      <implementation-class>com.study.plugin.sedentaryreminder.components.MyProjectComponent</implementation-class>-->
-<!--    </component>-->
-<!--  </project-components>-->
-  
-<!--  <applicationListeners>-->
-<!--    <listener class="com.study.plugin.sedentaryreminder.listeners.MyApplicationOpenListener" topic="com.intellij.ide.AppLifecycleListener"/>-->
-<!--  </applicationListeners>-->
   <applicationListeners>
     <listener class="com.study.plugin.sedentaryreminder.listeners.SedentaryReminderApplicationListener" topic="com.intellij.ide.AppLifecycleListener"/>
   </applicationListeners>

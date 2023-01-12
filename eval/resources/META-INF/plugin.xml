@@ -1,0 +1,109 @@
+<idea-plugin>
+  <version>2.3.5</version>
+  <change-notes>&lt;pre&gt;
+    Release v2.3.4
+    1. fixed gitee issue: I4EVTS
+    Release v2.3.4
+    1. update the logic of auto reset option
+    Release v2.3.3
+    1. add more reset records
+    Release v2.3.2
+    1. fix plugin version
+    Release v2.3.1
+    1. fix for some plugins
+    Release v2.3.0
+    1. fix for 2021.2.3
+    Release v2.2.4
+    1. fix for 2019.2
+    Release v2.2.3
+    1. add custom error handler
+    Release v2.2.2
+    1. fix issue with JRebel
+    Release v2.2.1
+    1. fix depends
+    Release v2.2.0
+    1. fix the issue: "Cannot create listener"
+    2. add support for: Android Studio
+    Release v2.1.15
+    1. fix welcome screen menu for 2021.2
+    Release v2.1.14
+    1. fix minor exceptions
+    Release v2.1.13
+    1. fix error notification
+    Release v2.1.12
+    1. fix disable plugins
+    Release v2.1.11
+    1. fix for block list: https://plugins.jetbrains.com/files/brokenPlugins.json
+    Release v2.1.10
+    1. update welcome menu for 2020.3.1
+    Release v2.1.9
+    1. fixed for "rider for unreal engine"
+    Release v2.1.8
+    1. fixed the issue of resetting market plugins for genuine users
+    Release v2.1.7
+    1. add help page link
+    Release v2.1.6
+    1. fix the pop-up of license window
+    Release v2.1.5
+    1. fix memory leak
+    Release v2.1.4
+    1. fix reference
+    Release v2.1.3
+    1. add version in UI
+    Release v2.1.2
+    1. fix third party plugins switch
+    Release v2.1.1
+    1. add ide plugin marketplace mechanism
+    Release v2.1.0
+    1. add option "Auto reset before per restart"
+    Release v2.0.4
+    1. fix plugins reset
+    2. reset more gracefully
+    Release v2.0.3
+    1. more friendly "Reload" icon
+    Release v2.0.2
+    1. sync prefs manually
+    Release v2.0.1
+    1. add option: Reset Automatically
+    Release v2.0.0
+    1. add ui
+    2. more stable and accurate
+    Release v1.0.5
+    1. update for 2020.2.x
+    Release v1.0.4
+    1. reset completely
+    Release v1.0.3
+    1. bug fix
+    Release v1.0.2
+    1. compatibility fix
+    &lt;/pre&gt;</change-notes>
+  <idea-version since-build="145.258"/>
+  <id>io.zhile.research.ide-eval-resetter</id>
+  <name>IDE Eval Reset</name>
+  <vendor url="https://zhile.io">zhile.io</vendor>
+  <description>
+    I can reset your IDE eval information.&lt;br&gt;
+    &lt;em&gt;Click "Help" menu and select "Eval Reset"&lt;/em&gt;&lt;br&gt;&lt;br&gt;
+    &lt;p&gt;
+    &lt;a href="https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html" target="_blank"&gt;Need Help?&lt;/a&gt;
+    &lt;/p&gt;
+  </description>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.java</depends>
+
+  <actions>
+    <action class="io.zhile.research.intellij.ier.action.ResetAction" id="io.zhile.research.intellij.ier.action.ResetAction">
+      <add-to-group group-id="HelpMenu" anchor="last"/>
+      <add-to-group group-id="WelcomeScreen.Documentation" anchor="last"/>
+    </action>
+    <action class="io.zhile.research.intellij.ier.action.RestartAction" id="io.zhile.research.intellij.ier.action.RestartAction"/>
+  </actions>
+  <applicationListeners>
+    <listener class="io.zhile.research.intellij.ier.listener.PluginListener" topic="com.intellij.ide.plugins.DynamicPluginListener"/>
+  </applicationListeners>
+  <extensions defaultExtensionNs="com.intellij">
+    <errorHandler implementation="io.zhile.research.intellij.ier.helper.ErrorReporter"/>
+    <preloadingActivity implementation="io.zhile.research.intellij.ier.listener.AppInitActivity"/>
+  </extensions>
+</idea-plugin>

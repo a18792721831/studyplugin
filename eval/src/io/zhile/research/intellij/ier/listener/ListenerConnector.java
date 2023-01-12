@@ -1,0 +1,56 @@
+/* Decompiler 8ms, total 321ms, lines 56 */
+package io.zhile.research.intellij.ier.listener;
+
+import com.intellij.ide.AppLifecycleListener;
+import com.intellij.openapi.Disposable;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationActivationListener;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.util.Disposer;
+import com.intellij.util.messages.MessageBusConnection;
+import io.zhile.research.intellij.ier.helper.BrokenPlugins;
+import io.zhile.research.intellij.ier.helper.CustomProperties;
+import io.zhile.research.intellij.ier.helper.CustomRepository;
+import io.zhile.research.intellij.ier.helper.ReflectionHelper;
+import java.lang.reflect.Method;
+
+public class ListenerConnector {
+    private static Disposable disposable;
+
+    public static void setup() {
+        dispose();
+        CustomProperties.fix();
+        BrokenPlugins.fix();
+        CustomRepository.checkAndAdd("https://plugins.zhile.io");
+        Application app = ApplicationManager.getApplication();
+        disposable = Disposer.newDisposable();
+        Disposer.register(app, disposable);
+        MessageBusConnection connection = app.getMessageBus().connect(disposable);
+        connection.subscribe(AppLifecycleListener.TOPIC, new AppEventListener());
+        connection.subscribe(ApplicationActivationListener.TOPIC, new AppActivationListener());
+        callPluginInstallListenerMethod("setup");
+    }
+
+    public static void dispose() {
+        if (null != disposable && !Disposer.isDisposed(disposable)) {
+            callPluginInstallListenerMethod("remove");
+            Disposer.dispose(disposable);
+            disposable = null;
+        }
+    }
+
+    private static void callPluginInstallListenerMethod(String methodName) {
+        Class<?> klass = ReflectionHelper.getClass("com.intellij.ide.plugins.PluginStateListener");
+        if (null != klass) {
+            String className = ListenerConnector.class.getPackage().getName() + ".PluginInstallListener";
+            Method method = ReflectionHelper.getMethod(className, methodName, new Class[0]);
+            if (null != method) {
+                try {
+                    method.invoke((Object)null);
+                } catch (Exception var5) {
+                }
+
+            }
+        }
+    }
+}
