@@ -1,5 +1,7 @@
 package com.study.plugin.translate.action;
 
+import cn.hutool.core.util.ReUtil;
+import cn.hutool.core.util.StrUtil;
 import com.google.common.collect.Lists;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -39,6 +41,10 @@ public class TranslateAction extends AnAction {
     @Override
     public void actionPerformed(AnActionEvent e) {
         Editor editor = e.getData(CommonDataKeys.EDITOR);
+        if (editor == null) {
+            NotificationUtil.error("翻译失败，请稍后重试！");
+            return;
+        }
         SelectionModel selectionModel = editor.getSelectionModel();
         String word = selectionModel.getSelectedText();
         String enWord = callTranslate(word);
@@ -47,12 +53,16 @@ public class TranslateAction extends AnAction {
             NotificationUtil.error("翻译失败，请稍后重试！");
             return;
         }
-        // 转为驼峰
-        String humpsWord = convertHumps(enWord);
+        // 判断是否符合驼峰
+        if(!ReUtil.isMatch("(.*)_(\\\\w)(.*)", enWord)) {
+            // 转为驼峰
+            enWord = convertHumps(enWord);
+        }
         Document document = editor.getDocument();
         // 替换
+        String finalEnWord = enWord;
         WriteCommandAction.runWriteCommandAction(e.getProject(),
-                () -> document.replaceString(selectionModel.getSelectionStart(), selectionModel.getSelectionEnd(), humpsWord));
+                () -> document.replaceString(selectionModel.getSelectionStart(), selectionModel.getSelectionEnd(), finalEnWord));
     }
 
     @Override

@@ -1,5 +1,8 @@
 package com.study.plugin.translate.service;
 
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.http.HttpUtil;
+import cn.hutool.json.JSONUtil;
 import com.intellij.openapi.components.Service;
 import com.study.plugin.translate.beans.YoudaoTranslateResult;
 import com.study.plugin.translate.utils.PluginAppKeys;
@@ -20,26 +23,16 @@ public final class YoudaoTranslateRestService extends TranslateRestService imple
 
     private String DIGEST_KEY = "SHA-256";
 
-    public YoudaoTranslateRestService() {
-        super();
-        if (!isInit.get()) {
-            super.init();
-        }
-    }
-
-
     @Override
     public String translate(String word) {
         Map<String, String> params = getParams(word);
         StringBuilder builder = new StringBuilder(HOST + "?");
-        params.entrySet().forEach(ent -> {
-            builder.append(ent.getKey() + "=" + ent.getValue() + "&");
-        });
+        params.forEach((key, value) -> builder.append(key).append("=").append(value).append("&"));
         String requestUrl = builder.toString();
         requestUrl = requestUrl.substring(0, requestUrl.length() - 1);
-        YoudaoTranslateResult result = restTemplate.getForObject(requestUrl, YoudaoTranslateResult.class);
-        if (result.getErrorCode().equals("0")) {
-            return result.getTranslation().get(0);
+        String res = HttpUtil.get(requestUrl);
+        if (StrUtil.isNotBlank(res)) {
+            return JSONUtil.toBean(res, YoudaoTranslateResult.class).getTranslation().get(0);
         }
         return null;
     }

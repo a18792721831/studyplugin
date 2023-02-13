@@ -1,21 +1,10 @@
 package com.study.plugin.translate.service;
 
 import com.intellij.openapi.components.Service;
-import com.study.plugin.translate.beans.DeeplResult;
 import com.study.plugin.translate.utils.PluginAppKeys;
-import java.net.URI;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import lombok.Setter;
-import org.apache.groovy.util.Maps;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.RequestEntity;
-import org.springframework.util.CollectionUtils;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 
 @Service
 public final class DeeplTranslateRestService extends TranslateRestService implements PluginAppKeys {
@@ -25,27 +14,30 @@ public final class DeeplTranslateRestService extends TranslateRestService implem
     @Setter
     private String APP_SECRET = appInfoService.get(DEEPL_APP_SECRET_SAVE_KEY);
 
-    public DeeplTranslateRestService() {
-        super();
-        if (!isInit.get()) {
-            init();
-        }
-    }
+//    public DeeplTranslateRestService() {
+//        super();
+//        if (!isInit.get()) {
+//            init();
+//        }
+//    }
 
     @Override
     public String translate(String word) {
-        Map<String, String> params = getParams(word);
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("Content-Type", "application/x-www-form-urlencoded");
-        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
-        params.entrySet().forEach(ent -> {
-            map.put(ent.getKey(), Collections.singletonList(ent.getValue()));
-        });
-        RequestEntity<MultiValueMap<String, String>> request = new RequestEntity<>(map, httpHeaders, HttpMethod.POST, URI.create(HOST));
-        DeeplResult result = restTemplate.postForObject(HOST, request, DeeplResult.class, Maps.of("auth_key", APP_SECRET));
-        if (Objects.nonNull(result) && !CollectionUtils.isEmpty(result.getTranslations())) {
-            return result.getTranslations().get(0).getText();
-        }
+//        Map<String, String> params = getParams(word);
+//        HttpUtil.createPost(HOST)
+//                .header("Content-Type", "application/x-www-form-urlencoded")
+//
+//        HttpHeaders httpHeaders = new HttpHeaders();
+//        httpHeaders.add("Content-Type", "application/x-www-form-urlencoded");
+//        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+//        params.entrySet().forEach(ent -> {
+//            map.put(ent.getKey(), Collections.singletonList(ent.getValue()));
+//        });
+//        RequestEntity<MultiValueMap<String, String>> request = new RequestEntity<>(map, httpHeaders, HttpMethod.POST, URI.create(HOST));
+//        DeeplResult result = restTemplate.postForObject(HOST, request, DeeplResult.class, Maps.of("auth_key", APP_SECRET));
+//        if (Objects.nonNull(result) && !CollectionUtils.isEmpty(result.getTranslations())) {
+//            return result.getTranslations().get(0).getText();
+//        }
         return null;
     }
 

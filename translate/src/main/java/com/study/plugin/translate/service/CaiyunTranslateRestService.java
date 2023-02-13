@@ -1,17 +1,17 @@
 package com.study.plugin.translate.service;
 
+import cn.hutool.http.HttpRequest;
+import cn.hutool.http.HttpResponse;
+import cn.hutool.http.HttpUtil;
+import cn.hutool.json.JSONUtil;
 import com.intellij.openapi.components.Service;
+import com.study.plugin.translate.beans.CaiyunTranslateResult;
 import com.study.plugin.translate.utils.PluginAppKeys;
-import java.net.URI;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import lombok.Setter;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
-import org.springframework.http.ResponseEntity;
 
 @Service
 public final class CaiyunTranslateRestService extends TranslateRestService implements PluginAppKeys {
@@ -21,32 +21,23 @@ public final class CaiyunTranslateRestService extends TranslateRestService imple
     @Setter
     private String APP_SECRET = appInfoService.get(CAIYUN_APP_SECRET_SAVE_KEY);
 
-    public CaiyunTranslateRestService() {
-        super();
-        if (!isInit.get()) {
-            init();
-        }
-    }
-
     @Override
     public String translate(String word) {
-        HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.add("content-type", "application/json");
-        requestHeaders.add("x-authorization", "token " + APP_SECRET);
-        RequestEntity<Map<String, String>> request = new RequestEntity<>(getParams(word), HttpMethod.POST, URI.create(HOST));
-        ResponseEntity<String> stringResponseEntity = restTemplate.postForEntity(HOST, request, String.class);
-        HttpStatus statusCode = stringResponseEntity.getStatusCode();
-        if (HttpStatus.OK == statusCode) {
-            String enWord = stringResponseEntity.getBody();
-            return enWord;
+        HttpRequest post = HttpUtil.createPost(HOST)
+                .header("x-authorization", "token " + APP_SECRET)
+                .timeout(5_000)
+                .body(JSONUtil.toJsonStr(getParams(word)));
+        HttpResponse response = post.execute();
+        if (response.isOk()) {
+//            {"src_tgt":[],"target":["initializesTheHeadAndTailPointers"],"confidence":0.8,"rc":0}
+            return Arrays.stream(JSONUtil.toBean(response.body(), CaiyunTranslateResult.class).getTarget()).findAny().orElse(null);
         }
-
         return null;
     }
 
-    private Map<String, String> getParams(String word) {
-        Map<String, String> params = new HashMap<>();
-        params.put("source", word);
+    private Map<String, Object> getParams(String word) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("source", new String[]{word});
         params.put("trans_type", "zh2en");
         params.put("request_id", UUID.randomUUID().toString());
         params.put("replaced", "true");

@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="rootJPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="781" height="400"/>
+      <xy x="20" y="20" width="781" height="2262"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -294,7 +294,7 @@
                 <properties>
                   <editable value="false"/>
                   <enabled value="false"/>
-                  <text value="彩云小译需要到https://dashboard.caiyunapp.com/user/user/info/#注册账号。&#10;注册完账后后需要通过人工审核，人工审核节假日较慢。&#10;(因为我的账号还未通过审核，因此不知道彩云小译的定价情况)"/>
+                  <text value="彩云小译需要到https://dashboard.caiyunapp.com/user/user/info/#注册账号。&#10;注册完账后后需要通过人工审核，人工审核节假日较慢。&#10;审核通过后给予100万/月的免费翻译字符数(包含空格和标点)&#10;定价：100万/20元,超过才会开始收费"/>
                 </properties>
               </component>
               <vspacer id="2a43b">

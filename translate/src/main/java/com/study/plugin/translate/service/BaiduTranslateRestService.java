@@ -1,15 +1,14 @@
 package com.study.plugin.translate.service;
 
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.http.HttpUtil;
+import cn.hutool.json.JSONUtil;
 import com.intellij.openapi.components.Service;
 import com.study.plugin.translate.beans.BaiduTranslateResult;
 import com.study.plugin.translate.utils.PluginAppKeys;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import lombok.Setter;
-import okhttp3.Call;
-import okhttp3.Request;
-import org.springframework.util.CollectionUtils;
 
 @Service
 public final class BaiduTranslateRestService extends TranslateRestService implements PluginAppKeys {
@@ -24,13 +23,6 @@ public final class BaiduTranslateRestService extends TranslateRestService implem
 
     private String DIGEST_KEY = "MD5";
 
-    public BaiduTranslateRestService() {
-        super();
-        if (!isInit.get()) {
-            super.init();
-        }
-    }
-
     @Override
     public String translate(String word) {
         Map<String, String> params = getParams(word);
@@ -40,9 +32,9 @@ public final class BaiduTranslateRestService extends TranslateRestService implem
         });
         String requestUrl = builder.toString();
         requestUrl = requestUrl.substring(0, requestUrl.length() - 1);
-        BaiduTranslateResult result = restTemplate.getForObject(requestUrl, BaiduTranslateResult.class);
-        if (Objects.isNull(result.getError_code()) && !CollectionUtils.isEmpty(result.getTrans_result())) {
-            return result.getTrans_result().get(0).getDst();
+        String res = HttpUtil.get(requestUrl);
+        if (StrUtil.isNotBlank(res)) {
+            return JSONUtil.toBean(res, BaiduTranslateResult.class).getTrans_result().get(0).getDst();
         }
         return null;
     }
