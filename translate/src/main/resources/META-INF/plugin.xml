@@ -1,7 +1,7 @@
 <idea-plugin require-restart="false">
     <id>com.study.plugin.translate</id>
     <name>Chinese-English Translate</name>
-    <version>5.0</version>
+    <version>6.0</version>
     <vendor email="2205105579@qq.com" url="https://blog.csdn.net/a18792721831">a18792721831的CSDN博客</vendor>
 
     <description><![CDATA[
@@ -12,14 +12,15 @@
     ]]></description>
 
     <change-notes><![CDATA[
-      version 5.0:<br/>
+      version 6.0:<br/>
+      This version include common translate service, maybe a long time version.
+      Every translate service is free every month for include common translate service, but you need careful take any charges.
       <ul>
-        <li>abandonment <code>restTemplate</code> and <code>okhttp</code></li>
-        <li>use very very light weight third-party dependency <code>hutool</code></li>
-        <li>plugin size narrow many</li>
-        <li><code>caiyun</code>debug success</li>
+        <li>disable not useful config tab</li>
+        <li>add <code>tengxun tmt translate</code></li>
+        <li>add <code>ali tmt translate</code></li>
+        <li>add <code>huawei tmt translate</code></li>
       </ul>
-
       version 1.0: translate.<br/>
       version 2.0: change description.<br/>
       version 3.0: change name and since idea version.<br/>
@@ -29,6 +30,13 @@
         <li>replace <code>spring restTemplate</code> to <code>okhttp</code></li>
         <li>translate config effective in real time</li>
         <li>add translate icon</li>
+      </ul>
+      version 5.0:<br/>
+      <ul>
+        <li>abandonment <code>restTemplate</code> and <code>okhttp</code></li>
+        <li>use very very light weight third-party dependency <code>hutool</code></li>
+        <li>plugin size narrow many</li>
+        <li><code>caiyun</code>debug success</li>
       </ul>
     ]]>
     </change-notes>

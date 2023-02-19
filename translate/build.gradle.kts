@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.study.plugin.translate"
-version = "5.0"
+version = "6.0"
 
 repositories {
     mavenCentral()
@@ -17,6 +17,7 @@ dependencies{
     implementation("cn.hutool:hutool-json:5.4.0")
     // https://mvnrepository.com/artifact/cn.hutool/hutool-http
     implementation("cn.hutool:hutool-http:5.4.0")
+    implementation("javax.xml.bind:jaxb-api:2.3.1")
 }
 
 // Configure Gradle IntelliJ Plugin

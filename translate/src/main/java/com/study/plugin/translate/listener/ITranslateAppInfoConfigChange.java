@@ -1,6 +1,5 @@
 package com.study.plugin.translate.listener;
 
-import com.intellij.openapi.Disposable;
 import com.intellij.util.messages.Topic;
 
 public interface ITranslateAppInfoConfigChange {
@@ -14,4 +13,10 @@ public interface ITranslateAppInfoConfigChange {
     void caiyunChange(String appSecret);
 
     void deeplChange(String appSecret);
+
+    void tengxunjifanChange(String appId, String appSecret);
+
+    void huaweijifanChange(String projectId,String appId, String appSecret);
+
+    void alijifanChange(String appId, String appSecret);
 }

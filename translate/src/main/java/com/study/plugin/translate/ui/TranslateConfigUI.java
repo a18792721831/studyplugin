@@ -1,15 +1,7 @@
 package com.study.plugin.translate.ui;
 
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.uiDesigner.core.Spacer;
-import java.awt.Dimension;
-import java.awt.Insets;
 import lombok.Getter;
 
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTabbedPane;
@@ -18,7 +10,7 @@ import javax.swing.JTextArea;
 public class TranslateConfigUI {
     @Getter
     private JPanel rootJPanel;
-    private JTabbedPane youdaoTabbedPanel;
+    private JTabbedPane translateConfigTabedPanel;
     private JPanel youdaoJPanel;
     private JPanel biyingJPanel;
     private JPanel baiduJPanel;
@@ -32,11 +24,24 @@ public class TranslateConfigUI {
     private JPasswordField deeplAppSecretTextField;
     private JPanel caiyunJPanel;
     private JPasswordField caiyunAppSecretTextField;
-    private JTextArea 如果你还没有百度翻译的账号请到httpsAiYoudaoTextArea;
-    private JTextArea 必应翻译需要到HttpsCnBingTextArea;
-    private JTextArea 百度翻译需要到httpApiFanyiBaiduTextArea;
-    private JTextArea 国内无法使用请确保浏览器可调用否则请勿使用TextArea;
-    private JTextArea 彩云小译需要到httpsDashboardCaiyunappComTextArea;
+    private JTextArea youdaoDescription;
+    private JTextArea bingyingDescription;
+    private JTextArea baiduDescription;
+    private JTextArea deeplDescription;
+    private JTextArea caiyunDescription;
+    private JPanel tengxunjifanJPanel;
+    private JPasswordField tengxunjifanAppIdTextField;
+    private JPasswordField tengxunjifanAppSecretTextField;
+    private JPasswordField huaweijifanProjectIdTextField;
+    private JPasswordField huaweijifanAppSecretTextField;
+    private JPanel huaweijifanJPanel;
+    private JPanel alijifanJPanel;
+    private JTextArea tengxunjifanDescription;
+    private JTextArea huaweijifanDescription;
+    private JPasswordField huaweijifanAppIdTextField;
+    private JPasswordField alijifanAppIdTextField;
+    private JPasswordField alijifanAppSecretTextField;
+    private JTextArea alijifanDescription;
 
     public String getYoudaoAppId() {
         return String.valueOf(youdaoAppIdTextField.getPassword()).trim();
@@ -68,6 +73,34 @@ public class TranslateConfigUI {
 
     public String getCaiyunAppSecret() {
         return String.valueOf(caiyunAppSecretTextField.getPassword()).trim();
+    }
+
+    public String getTengxunjifanAppId() {
+        return String.valueOf(tengxunjifanAppIdTextField.getPassword()).trim();
+    }
+
+    public String getTengxunjifanAppSecret() {
+        return String.valueOf(tengxunjifanAppSecretTextField.getPassword()).trim();
+    }
+
+    public String getHuaweijifanProjectId() {
+        return String.valueOf(huaweijifanProjectIdTextField.getPassword()).trim();
+    }
+
+    public String getHuaweijifanAppId() {
+        return String.valueOf(huaweijifanAppIdTextField.getPassword()).trim();
+    }
+
+    public String getHuaweijifanAppSecret() {
+        return String.valueOf(huaweijifanAppSecretTextField.getPassword()).trim();
+    }
+
+    public String getAlijifanAppId() {
+        return String.valueOf(alijifanAppIdTextField.getPassword()).trim();
+    }
+
+    public String getAlijifanAppSecret() {
+        return String.valueOf(alijifanAppSecretTextField.getPassword()).trim();
     }
 
     public void setYoudaoAppId(String youdaoAppId) {
@@ -102,11 +135,31 @@ public class TranslateConfigUI {
         caiyunAppSecretTextField.setText(caiyunAppSecret);
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("TranslateConfigUI");
-        frame.setContentPane(new TranslateConfigUI().rootJPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+    public void setTengxunjifanAppId(String tengxunjifanAppId) {
+        tengxunjifanAppIdTextField.setText(tengxunjifanAppId);
+    }
+
+    public void setTengxunjifanAppSecret(String tengxunjifanAppSecret) {
+        tengxunjifanAppSecretTextField.setText(tengxunjifanAppSecret);
+    }
+
+    public void setHuaweijifanProjectId(String huaweijifanProjectId) {
+        huaweijifanProjectIdTextField.setText(huaweijifanProjectId);
+    }
+
+    public void setHuaweijifanAppId(String huaweijifanAppId) {
+        huaweijifanAppIdTextField.setText(huaweijifanAppId);
+    }
+
+    public void setHuaweijifanAppSecret(String huaweijifanAppSecret) {
+        huaweijifanAppSecretTextField.setText(huaweijifanAppSecret);
+    }
+
+    public void setAlijifanAppId(String alijifanAppId) {
+        alijifanAppIdTextField.setText(alijifanAppId);
+    }
+
+    public void setAlijifanAppSecret(String alijifanAppSecret) {
+        alijifanAppSecretTextField.setText(alijifanAppSecret);
     }
 }

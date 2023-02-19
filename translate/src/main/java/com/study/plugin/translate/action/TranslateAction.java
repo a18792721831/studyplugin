@@ -13,30 +13,31 @@ import com.intellij.openapi.editor.Caret;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
+import com.study.plugin.translate.service.AlijifanTranslateRestService;
 import com.study.plugin.translate.service.BaiduTranslateRestService;
 import com.study.plugin.translate.service.CaiyunTranslateRestService;
-import com.study.plugin.translate.service.DeeplTranslateRestService;
+import com.study.plugin.translate.service.HuaweijifanTranslateRestService;
+import com.study.plugin.translate.service.TengxunjifanTranslateRestService;
 import com.study.plugin.translate.service.TranslateRestService;
 import com.study.plugin.translate.service.YoudaoTranslateRestService;
 import com.study.plugin.translate.utils.NotificationUtil;
-import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class TranslateAction extends AnAction {
 
     private Application application = ApplicationManager.getApplication();
 
     private YoudaoTranslateRestService youdaoTranslateRestService = application.getService(YoudaoTranslateRestService.class);
-
     private BaiduTranslateRestService baiduTranslateRestService = application.getService(BaiduTranslateRestService.class);
-
-    private DeeplTranslateRestService deeplTranslateRestService = application.getService(DeeplTranslateRestService.class);
-
     private CaiyunTranslateRestService caiyunTranslateRestService = application.getService(CaiyunTranslateRestService.class);
-
+    private TengxunjifanTranslateRestService tengxunjifanTranslateRestService = application.getService(TengxunjifanTranslateRestService.class);
+    private HuaweijifanTranslateRestService huaweijifanTranslateRestService = application.getService(HuaweijifanTranslateRestService.class);
+    private AlijifanTranslateRestService alijifanTranslateRestService = application.getService(AlijifanTranslateRestService.class);
     // 持有所有的服务
-    private List<TranslateRestService> allService = Lists.newArrayList(youdaoTranslateRestService, baiduTranslateRestService, deeplTranslateRestService, caiyunTranslateRestService);
+    private final List<TranslateRestService> allService = Lists.newArrayList(youdaoTranslateRestService, baiduTranslateRestService, caiyunTranslateRestService, tengxunjifanTranslateRestService, huaweijifanTranslateRestService, alijifanTranslateRestService);
 
     @Override
     public void actionPerformed(AnActionEvent e) {
@@ -49,26 +50,25 @@ public class TranslateAction extends AnAction {
         String word = selectionModel.getSelectedText();
         String enWord = callTranslate(word);
         // 如果所有厂商翻译失败，那么通知并结束
-        if (StringUtils.isBlank(enWord)) {
+        if (StrUtil.isBlank(enWord)) {
             NotificationUtil.error("翻译失败，请稍后重试！");
             return;
         }
         // 判断是否符合驼峰
-        if(!ReUtil.isMatch("(.*)_(\\\\w)(.*)", enWord)) {
+        if (!ReUtil.isMatch("(.*)_(\\\\w)(.*)", enWord)) {
             // 转为驼峰
-            enWord = convertHumps(enWord);
+            enWord = convertHumps(enWord.replaceAll("\\.", "")).replaceAll("'", "");
         }
         Document document = editor.getDocument();
         // 替换
         String finalEnWord = enWord;
-        WriteCommandAction.runWriteCommandAction(e.getProject(),
-                () -> document.replaceString(selectionModel.getSelectionStart(), selectionModel.getSelectionEnd(), finalEnWord));
+        WriteCommandAction.runWriteCommandAction(e.getProject(), () -> document.replaceString(selectionModel.getSelectionStart(), selectionModel.getSelectionEnd(), finalEnWord));
     }
 
     @Override
     public void update(@NotNull AnActionEvent e) {
         Caret caret = e.getData(CommonDataKeys.CARET);
-        if (caret.getSelectionStart() != caret.getSelectionEnd()) {
+        if (caret != null && caret.getSelectionStart() != caret.getSelectionEnd()) {
             e.getPresentation().setEnabledAndVisible(Boolean.TRUE);
         } else {
             e.getPresentation().setEnabledAndVisible(Boolean.FALSE);
@@ -109,7 +109,7 @@ public class TranslateAction extends AnAction {
                     // 只要有任意一个子类成功翻译，那么直接结束，不在尝试其他的厂商
                     return enWord;
                 }
-            } catch (Exception exception) {
+            } catch (Exception ignored) {
             }
         }
         return null;
