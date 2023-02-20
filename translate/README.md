@@ -1,6 +1,7 @@
 # 🔥Chinese-English Translate🔥
 
-![JetBrains Logo](https://resources.jetbrains.com/storage/products/company/brand/logos/IntelliJ_IDEA.png?_ga=2.77687581.824672057.1676132227-2062244792.1619167823&_gl=1*qv22ce*_ga*MjA2MjI0NDc5Mi4xNjE5MTY3ODIz*_ga_9J976DJZ68*MTY3Njg2ODU4MC42Mi4xLjE2NzY4Njg2ODcuNjAuMC4w)
+<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/IntelliJ_IDEA.png?_ga=2.77687581.824672057.1676132227-2062244792.1619167823&_gl=1*qv22ce*_ga*MjA2MjI0NDc5Mi4xNjE5MTY3ODIz*_ga_9J976DJZ68*MTY3Njg2ODU4MC42Mi4xLjE2NzY4Njg2ODcuNjAuMC4w" alt="JetBrains Logo" width="50"/>
+
 
 Chinese-English Translate 是一款方便快捷的IDEA插件，它可以将用户在编辑器中选中的中文文本翻译成英文，并自动将结果转换成驼峰格式。该插件支持多种翻译引擎，包括百度翻译、有道翻译、彩云翻译、腾讯翻译、阿里翻译和华为翻译等。
 
