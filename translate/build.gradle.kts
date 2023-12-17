@@ -1,22 +1,20 @@
 plugins {
     id("java")
-    id("org.jetbrains.intellij") version "1.10.1"
+    id("org.jetbrains.intellij") version "1.15.0"
 }
 
 group = "com.study.plugin.translate"
-version = "6.0"
+version = "6.1"
 
 repositories {
     mavenCentral()
 }
 
 dependencies{
-    compileOnly("org.projectlombok:lombok:1.18.24")
-    annotationProcessor("org.projectlombok:lombok:1.18.24")
-    // https://mvnrepository.com/artifact/cn.hutool/hutool-json
-    implementation("cn.hutool:hutool-json:5.4.0")
-    // https://mvnrepository.com/artifact/cn.hutool/hutool-http
-    implementation("cn.hutool:hutool-http:5.4.0")
+    compileOnly("org.projectlombok:lombok:1.18.30")
+    annotationProcessor("org.projectlombok:lombok:1.18.30")
+    implementation("cn.hutool:hutool-json:5.8.23")
+    implementation("cn.hutool:hutool-http:5.8.23")
     implementation("javax.xml.bind:jaxb-api:2.3.1")
 }
 
@@ -42,7 +40,7 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("203.0")
-        untilBuild.set("231.*")
+        untilBuild.set("233.*")
     }
 
     signPlugin {

@@ -2,10 +2,7 @@ package com.study.plugin.translate.ui;
 
 import lombok.Getter;
 
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextArea;
+import javax.swing.*;
 
 public class TranslateConfigUI {
     @Getter
@@ -42,6 +39,7 @@ public class TranslateConfigUI {
     private JPasswordField alijifanAppIdTextField;
     private JPasswordField alijifanAppSecretTextField;
     private JTextArea alijifanDescription;
+    private JComboBox outFormatCombox;
 
     public String getYoudaoAppId() {
         return String.valueOf(youdaoAppIdTextField.getPassword()).trim();
@@ -103,6 +101,18 @@ public class TranslateConfigUI {
         return String.valueOf(alijifanAppSecretTextField.getPassword()).trim();
     }
 
+    /**
+     * 原文(xx yy)
+     * 大驼峰(XxYy)
+     * 小驼峰(xxYy)
+     * 小蛇形(xx_yy)
+     * 大蛇形(XX_YY)
+     * 无空格原文(xxyy)
+     */
+    public int getOutFormat() {
+        return outFormatCombox.getSelectedIndex();
+    }
+
     public void setYoudaoAppId(String youdaoAppId) {
         youdaoAppIdTextField.setText(youdaoAppId);
     }
@@ -161,5 +171,17 @@ public class TranslateConfigUI {
 
     public void setAlijifanAppSecret(String alijifanAppSecret) {
         alijifanAppSecretTextField.setText(alijifanAppSecret);
+    }
+
+    /**
+     * 原文(xx yy)
+     * 大驼峰(XxYy)
+     * 小驼峰(xxYy)
+     * 小蛇形(xx_yy)
+     * 大蛇形(XX_YY)
+     * 无空格原文(xxyy)
+     */
+    public void setOutFormatCombox(int outFormat) {
+        outFormatCombox.setSelectedIndex(outFormat);
     }
 }

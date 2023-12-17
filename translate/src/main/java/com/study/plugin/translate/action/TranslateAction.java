@@ -3,6 +3,7 @@ package com.study.plugin.translate.action;
 import cn.hutool.core.util.ReUtil;
 import cn.hutool.core.util.StrUtil;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -13,20 +14,17 @@ import com.intellij.openapi.editor.Caret;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
-import com.study.plugin.translate.service.AlijifanTranslateRestService;
-import com.study.plugin.translate.service.BaiduTranslateRestService;
-import com.study.plugin.translate.service.CaiyunTranslateRestService;
-import com.study.plugin.translate.service.HuaweijifanTranslateRestService;
-import com.study.plugin.translate.service.TengxunjifanTranslateRestService;
-import com.study.plugin.translate.service.TranslateRestService;
-import com.study.plugin.translate.service.YoudaoTranslateRestService;
+import com.study.plugin.translate.format.*;
+import com.study.plugin.translate.service.*;
 import com.study.plugin.translate.utils.NotificationUtil;
+import com.study.plugin.translate.utils.PluginAppKeys;
 import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Map;
 
-public class TranslateAction extends AnAction {
+public class TranslateAction extends AnAction implements PluginAppKeys {
 
     private Application application = ApplicationManager.getApplication();
 
@@ -38,6 +36,24 @@ public class TranslateAction extends AnAction {
     private AlijifanTranslateRestService alijifanTranslateRestService = application.getService(AlijifanTranslateRestService.class);
     // 持有所有的服务
     private final List<TranslateRestService> allService = Lists.newArrayList(youdaoTranslateRestService, baiduTranslateRestService, caiyunTranslateRestService, tengxunjifanTranslateRestService, huaweijifanTranslateRestService, alijifanTranslateRestService);
+    private TranslateAppInfoService appInfoService = application.getService(TranslateAppInfoService.class);
+    private CamelCaseFormat camelCaseFormat = application.getService(CamelCaseFormat.class);
+    private NoSpaceFormat noSpaceFormat = application.getService(NoSpaceFormat.class);
+    private PascalCaseFormat pascalCaseFormat = application.getService(PascalCaseFormat.class);
+    private SnakeCaseFormat snakeCaseFormat = application.getService(SnakeCaseFormat.class);
+    private SourceFormat sourceFormat = application.getService(SourceFormat.class);
+    private UpperSnakeCaseFormat upperSnakeCaseFormat = application.getService(UpperSnakeCaseFormat.class);
+
+    private final Map<Integer, IWordFormat> allFormat = Maps.newHashMap();
+
+    {
+        allFormat.put(camelCaseFormat.getSelectIndex(), camelCaseFormat);
+        allFormat.put(noSpaceFormat.getSelectIndex(), noSpaceFormat);
+        allFormat.put(pascalCaseFormat.getSelectIndex(), pascalCaseFormat);
+        allFormat.put(snakeCaseFormat.getSelectIndex(), snakeCaseFormat);
+        allFormat.put(sourceFormat.getSelectIndex(), sourceFormat);
+        allFormat.put(upperSnakeCaseFormat.getSelectIndex(), upperSnakeCaseFormat);
+    }
 
     @Override
     public void actionPerformed(AnActionEvent e) {
@@ -54,10 +70,9 @@ public class TranslateAction extends AnAction {
             NotificationUtil.error("翻译失败，请稍后重试！");
             return;
         }
-        // 判断是否符合驼峰
-        if (!ReUtil.isMatch("(.*)_(\\\\w)(.*)", enWord)) {
-            // 转为驼峰
-            enWord = convertHumps(enWord.replaceAll("\\.", "")).replaceAll("'", "");
+        IWordFormat format = allFormat.get(appInfoService.getInt(OUTPUT_FORMAT_MODE));
+        if (!format.isMatch(enWord)) {
+            enWord = format.format(enWord.replaceAll("\\.", "")).replaceAll("'", "");
         }
         Document document = editor.getDocument();
         // 替换
@@ -73,24 +88,6 @@ public class TranslateAction extends AnAction {
         } else {
             e.getPresentation().setEnabledAndVisible(Boolean.FALSE);
         }
-    }
-
-    private String convertHumps(String source) {
-        StringBuilder result = new StringBuilder();
-        // 以空格分割单词
-        String[] allWords = source.split(" ");
-        for (int i = 0; i < allWords.length; i++) {
-            // 驼峰第一个单词全部小写
-            if (i == 0) {
-                result.append(allWords[i].toLowerCase());
-            } else {
-                // 其他单词第一个字母大写，其他小写
-                String lowerCase = allWords[i].toLowerCase();
-                result.append(Character.toUpperCase(lowerCase.charAt(0)));
-                result.append(lowerCase.substring(1));
-            }
-        }
-        return result.toString();
     }
 
     /**

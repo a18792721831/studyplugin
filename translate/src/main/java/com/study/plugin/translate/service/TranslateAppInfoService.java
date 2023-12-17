@@ -12,12 +12,24 @@ public final class TranslateAppInfoService {
         propertiesComponent.setValue(key, value);
     }
 
+    public void saveInt(String key, int value) {
+        propertiesComponent.setValue(key, value, -1);
+    }
+
     public String get(String key, String defaultValue) {
         return propertiesComponent.getValue(key, defaultValue);
     }
 
+    public int getInt(String key , int defaultValue) {
+        return propertiesComponent.getInt(key, defaultValue);
+    }
+
     public String get(String key) {
         return get(key, "");
+    }
+
+    public int getInt(String key) {
+        return getInt(key, 2);
     }
 
 }

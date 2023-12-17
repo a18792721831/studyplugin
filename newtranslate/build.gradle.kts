@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("org.jetbrains.intellij") version "1.10.1"
+    id("org.jetbrains.intellij") version "1.15.0"
 }
 
 group = "com.study.plugin.translate"
@@ -13,9 +13,7 @@ repositories {
 dependencies{
     compileOnly("org.projectlombok:lombok:1.18.24")
     annotationProcessor("org.projectlombok:lombok:1.18.24")
-    // https://mvnrepository.com/artifact/org.springframework/spring-web
     implementation("org.springframework:spring-web:5.2.22.RELEASE")
-    // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
 
 }

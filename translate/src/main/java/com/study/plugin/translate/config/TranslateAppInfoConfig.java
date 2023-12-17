@@ -51,6 +51,7 @@ public class TranslateAppInfoConfig implements SearchableConfigurable, PluginApp
         ui.setHuaweijifanAppSecret(appInfoService.get(HUAWEIJIFAN_APP_SECRET_SAVE_KEY));
         ui.setAlijifanAppId(appInfoService.get(ALIJIFAN_APP_ID_SAVE_KEY));
         ui.setAlijifanAppSecret(appInfoService.get(ALIJIFAN_APP_SECRET_SAVE_KEY));
+        ui.setOutFormatCombox(appInfoService.getInt(OUTPUT_FORMAT_MODE));
         return ui.getRootJPanel();
     }
 
@@ -76,7 +77,9 @@ public class TranslateAppInfoConfig implements SearchableConfigurable, PluginApp
                 !appInfoService.get(HUAWEIJIFAN_PROJECT_ID_SAVE_KEY).equals(ui.getHuaweijifanProjectId()) ||
                 !appInfoService.get(HUAWEIJIFAN_APP_SECRET_SAVE_KEY).equals(ui.getHuaweijifanAppSecret()) ||
                 !appInfoService.get(ALIJIFAN_APP_ID_SAVE_KEY).equals(ui.getAlijifanAppId()) ||
-                !appInfoService.get(ALIJIFAN_APP_SECRET_SAVE_KEY).equals(ui.getAlijifanAppSecret());
+                !appInfoService.get(ALIJIFAN_APP_SECRET_SAVE_KEY).equals(ui.getAlijifanAppSecret()) ||
+                appInfoService.getInt(OUTPUT_FORMAT_MODE) != ui.getOutFormat()
+                ;
     }
 
     @Override
@@ -140,6 +143,10 @@ public class TranslateAppInfoConfig implements SearchableConfigurable, PluginApp
             appInfoService.save(ALIJIFAN_APP_SECRET_SAVE_KEY, alijifanAppSecret);
             ApplicationManager.getApplication().getMessageBus().syncPublisher(ITranslateAppInfoConfigChange.TOPIC)
                     .alijifanChange(alijifanAppId, alijifanAppSecret);
+        }
+        int outFormat = ui.getOutFormat();
+        if (outFormat != -1) {
+            appInfoService.saveInt(OUTPUT_FORMAT_MODE, outFormat);
         }
     }
 }

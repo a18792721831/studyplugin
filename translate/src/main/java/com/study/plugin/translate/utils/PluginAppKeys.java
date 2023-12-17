@@ -18,4 +18,13 @@ public interface PluginAppKeys {
     String HUAWEIJIFAN_APP_SECRET_SAVE_KEY = "com.study.plugin.translate.huaweijifan.app.secret";
     String ALIJIFAN_APP_ID_SAVE_KEY = "com.study.plugin.translate.alijifan.app.id";
     String ALIJIFAN_APP_SECRET_SAVE_KEY = "com.study.plugin.translate.alijifan.app.secret";
+    /**
+     * 原文(xx yy)
+     * 大驼峰(XxYy)
+     * 小驼峰(xxYy)
+     * 小蛇形(xx_yy)
+     * 大蛇形(XX_YY)
+     * 无空格原文(xxyy)
+     */
+    String OUTPUT_FORMAT_MODE = "com.study.plugin.translate.output.format.mode";
 }
