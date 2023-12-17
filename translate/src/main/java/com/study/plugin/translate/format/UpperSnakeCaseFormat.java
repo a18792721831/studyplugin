@@ -22,7 +22,7 @@ public class UpperSnakeCaseFormat implements IWordFormat {
                 ReUtil.isMatch(CamelCaseFormat.REG, word)) {
             StringBuilder sb = new StringBuilder();
             char[] array = word.toCharArray();
-            sb.append(Character.toLowerCase(array[0]));
+            sb.append(Character.toUpperCase(array[0]));
             for (int i = 1; i < array.length; i++) {
                 if (Character.isUpperCase(array[i])) {
                     sb.append("_");
