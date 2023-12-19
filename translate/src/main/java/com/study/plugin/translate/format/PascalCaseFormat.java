@@ -4,7 +4,7 @@ import cn.hutool.core.util.ReUtil;
 import com.intellij.openapi.components.Service;
 
 @Service
-public class PascalCaseFormat implements IWordFormat {
+public final class PascalCaseFormat implements IWordFormat {
 
     public static final String REG = "^([A-Z][a-z]*)+$";
 

@@ -4,7 +4,7 @@ import cn.hutool.core.util.ReUtil;
 import com.intellij.openapi.components.Service;
 
 @Service
-public class UpperSnakeCaseFormat implements IWordFormat {
+public final class UpperSnakeCaseFormat implements IWordFormat {
 
     public static final String REG = "^([A-Z]+_)*[A-Z]+$";
 

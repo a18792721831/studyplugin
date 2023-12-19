@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.JComponent;
+import javax.swing.*;
 
 public class TranslateAppInfoConfig implements SearchableConfigurable, PluginAppKeys {
 
@@ -52,7 +52,10 @@ public class TranslateAppInfoConfig implements SearchableConfigurable, PluginApp
         ui.setAlijifanAppId(appInfoService.get(ALIJIFAN_APP_ID_SAVE_KEY));
         ui.setAlijifanAppSecret(appInfoService.get(ALIJIFAN_APP_SECRET_SAVE_KEY));
         ui.setOutFormatCombox(appInfoService.getInt(OUTPUT_FORMAT_MODE));
-        return ui.getRootJPanel();
+        JPanel rootJPanel = ui.getRootJPanel();
+        rootJPanel.revalidate();
+        rootJPanel.repaint();
+        return rootJPanel;
     }
 
     @Override

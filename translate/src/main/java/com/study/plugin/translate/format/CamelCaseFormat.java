@@ -4,7 +4,7 @@ import cn.hutool.core.util.ReUtil;
 import com.intellij.openapi.components.Service;
 
 @Service
-public class CamelCaseFormat implements IWordFormat{
+public final class CamelCaseFormat implements IWordFormat{
 
     public static final String REG = "^([a-z]+[A-Z]*\\w*)+$";
 

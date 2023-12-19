@@ -46,7 +46,7 @@ public class TranslateAction extends AnAction implements PluginAppKeys {
 
     private final Map<Integer, IWordFormat> allFormat = Maps.newHashMap();
 
-    {
+    public TranslateAction() {
         allFormat.put(camelCaseFormat.getSelectIndex(), camelCaseFormat);
         allFormat.put(noSpaceFormat.getSelectIndex(), noSpaceFormat);
         allFormat.put(pascalCaseFormat.getSelectIndex(), pascalCaseFormat);

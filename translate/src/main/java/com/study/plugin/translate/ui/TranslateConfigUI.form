@@ -17,7 +17,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <grid id="5e00c" binding="youdaoJPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="5e00c" binding="youdaoJPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="有道翻译"/>
@@ -71,9 +71,14 @@
                 <properties>
                   <editable value="false"/>
                   <enabled value="true"/>
-                  <text value="百度翻译需要到&#10;https://ai.youdao.com/?keyfrom=fanyi-new-nav#/&#10;注册账号。&#10;选择【自然语言翻译服务】-【文本翻译】创建应用。&#10;在&#10;https://ai.youdao.com/console/#/app-overview&#10;查看应用id和秘钥。&#10;每个账号有50人民币的赠送金额可用。&#10;差不多是100万字符的翻译。"/>
+                  <text value="有道翻译需要到&#10;https://ai.youdao.com/?keyfrom=fanyi-new-nav#/&#10;注册账号。&#10;选择【自然语言翻译服务】-【文本翻译】创建应用。&#10;在&#10;https://ai.youdao.com/console/#/app-overview&#10;查看应用id和秘钥。&#10;每个账号有50人民币的赠送金额可用。&#10;差不多是100万字符的翻译。"/>
                 </properties>
               </component>
+              <vspacer id="a6a7b">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
             </children>
           </grid>
           <grid id="31d0c" binding="biyingJPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -143,7 +148,7 @@
               </vspacer>
             </children>
           </grid>
-          <grid id="1ea68" binding="baiduJPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="1ea68" binding="baiduJPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="百度翻译"/>
@@ -200,6 +205,11 @@
                   <text value="百度翻译需要到&#10;http://api.fanyi.baidu.com/&#10;注册账号。&#10;在&#10;https://fanyi-api.baidu.com/choose&#10;开通通用文本翻译服务。&#10;在&#10;http://api.fanyi.baidu.com/manage/developer&#10;查看应用ID和秘钥。&#10;刚注册账号后需要进行实名认证。&#10;通过实名认证后，每月200万字符免费。"/>
                 </properties>
               </component>
+              <vspacer id="fbf48">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
             </children>
           </grid>
           <grid id="b9569" binding="deeplJPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -252,7 +262,7 @@
               </vspacer>
             </children>
           </grid>
-          <grid id="9946" binding="caiyunJPanel" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="9946" binding="caiyunJPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="彩云小译"/>
@@ -293,9 +303,14 @@
                   <text value="彩云小译需要到&#10;https://dashboard.caiyunapp.com/user/user/info/#&#10;注册账号。&#10;注册完账后后需要通过人工审核，人工审核节假日较慢。&#10;审核通过后给予100万/月的免费翻译字符数(包含空格和标点)&#10;定价：100万/20元,超过才会开始收费。&#10;&#10;彩云小译不在免费，原有额度用完后不在有额度了。--2023.9.23"/>
                 </properties>
               </component>
+              <vspacer id="94628">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
             </children>
           </grid>
-          <grid id="48c6c" binding="tengxunjifanJPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="48c6c" binding="tengxunjifanJPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="腾讯机翻"/>
@@ -352,9 +367,14 @@
                   <text value="腾讯机器翻译需要到&#10;https://console.cloud.tencent.com/tmt&#10;注册账号。&#10;然后在&#10;https://console.cloud.tencent.com/cam/capi&#10;新建秘钥。&#10;刚注册账号后需要进行实名认证。&#10;文本翻译的每月免费额度为500万字符，到达免费额度无法继续使用&#10;不会产生费用。"/>
                 </properties>
               </component>
+              <vspacer id="45934">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
             </children>
           </grid>
-          <grid id="63e10" binding="huaweijifanJPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="63e10" binding="huaweijifanJPanel" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="华为机翻"/>
@@ -427,9 +447,14 @@
                 </constraints>
                 <properties/>
               </component>
+              <vspacer id="c65d2">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
             </children>
           </grid>
-          <grid id="eeb55" binding="alijifanJPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="eeb55" binding="alijifanJPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="阿里机翻"/>
@@ -486,6 +511,11 @@
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
+              <vspacer id="ae589">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
             </children>
           </grid>
         </children>

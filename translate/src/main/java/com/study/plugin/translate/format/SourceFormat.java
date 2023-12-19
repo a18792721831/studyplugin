@@ -3,7 +3,7 @@ package com.study.plugin.translate.format;
 import com.intellij.openapi.components.Service;
 
 @Service
-public class SourceFormat implements IWordFormat{
+public final class SourceFormat implements IWordFormat{
     @Override
     public boolean isMatch(String word) {
         return false;

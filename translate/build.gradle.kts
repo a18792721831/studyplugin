@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.study.plugin.translate"
-version = "6.1"
+version = "6.2"
 
 repositories {
     mavenCentral()
@@ -40,7 +40,6 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("203.0")
-        untilBuild.set("233.*")
     }
 
     signPlugin {
