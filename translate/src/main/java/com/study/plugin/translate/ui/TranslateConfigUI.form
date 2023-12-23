@@ -41,15 +41,7 @@
                   <text value="应用秘钥："/>
                 </properties>
               </component>
-              <component id="78d22" class="javax.swing.JPasswordField" binding="youdaoAppIdTextField">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
-                </constraints>
-                <properties/>
-              </component>
-              <component id="23ec5" class="javax.swing.JPasswordField" binding="youdaoAppSecretTextField">
+              <component id="23ec5" class="javax.swing.JTextField" binding="youdaoAppSecretTextField">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -62,23 +54,35 @@
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <component id="3ded8" class="javax.swing.JTextArea" binding="youdaoDescription">
-                <constraints>
-                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <editable value="false"/>
-                  <enabled value="true"/>
-                  <text value="有道翻译需要到&#10;https://ai.youdao.com/?keyfrom=fanyi-new-nav#/&#10;注册账号。&#10;选择【自然语言翻译服务】-【文本翻译】创建应用。&#10;在&#10;https://ai.youdao.com/console/#/app-overview&#10;查看应用id和秘钥。&#10;每个账号有50人民币的赠送金额可用。&#10;差不多是100万字符的翻译。"/>
-                </properties>
-              </component>
               <vspacer id="a6a7b">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
+              <component id="a59c5" class="javax.swing.JEditorPane" binding="youdaoEditDescription">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="150"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <contentType value="text/html"/>
+                  <editable value="false"/>
+                  <enabled value="true"/>
+                  <text value="&lt;html&gt;&#10;  &lt;head&gt;&#10;    &#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;p align=&quot;left&quot; style=&quot;margin-top: 0&quot;&gt;&#10;      &amp;#26377;&amp;#36947;&amp;#32763;&amp;#35793;&amp;#38656;&amp;#35201;&amp;#21040;&lt;br&gt;&lt;a href=&quot;https://ai.youdao.com/?keyfrom=fanyi-new-nav#/&quot;&gt;https://ai.youdao.com/?keyfrom=fanyi-new-nav#/&lt;/a&gt;&lt;br&gt;&amp;#27880;&amp;#20876;&amp;#36134;&amp;#21495;&amp;#12290;&lt;br&gt;&amp;#36873;&amp;#25321;&amp;#12304;&amp;#33258;&amp;#28982;&amp;#35821;&amp;#35328;&amp;#32763;&amp;#35793;&amp;#26381;&amp;#21153;&amp;#12305;-&amp;#12304;&amp;#25991;&amp;#26412;&amp;#32763;&amp;#35793;&amp;#12305;&amp;#21019;&amp;#24314;&amp;#24212;&amp;#29992;&amp;#12290;&lt;br&gt;&amp;#22312;&lt;br&gt;&lt;a href=&quot;https://ai.youdao.com/console/#/app-overview&quot;&gt;https://ai.youdao.com/console/#/app-overview&lt;/a&gt;&lt;br&gt;&amp;#26597;&amp;#30475;&amp;#24212;&amp;#29992;id&amp;#21644;&amp;#31192;&amp;#38053;&amp;#12290;&lt;br&gt;&amp;#27599;&amp;#20010;&amp;#36134;&amp;#21495;&amp;#26377;50&amp;#20154;&amp;#27665;&amp;#24065;&amp;#30340;&amp;#36192;&amp;#36865;&amp;#37329;&amp;#39069;&amp;#21487;&amp;#29992;&amp;#12290;&lt;br&gt;&amp;#24046;&amp;#19981;&amp;#22810;&amp;#26159;100&amp;#19975;&amp;#23383;&amp;#31526;&amp;#30340;&amp;#32763;&amp;#35793;&amp;#12290;&lt;br&gt;&#10;    &lt;/p&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;&#10;"/>
+                </properties>
+                <clientProperties>
+                  <html.disable class="java.lang.Boolean" value="true"/>
+                </clientProperties>
+              </component>
+              <component id="13c96" class="javax.swing.JTextField" binding="youdaoAppIdTextField">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
             </children>
           </grid>
           <grid id="31d0c" binding="biyingJPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -112,7 +116,7 @@
                   <text value="应用秘钥："/>
                 </properties>
               </component>
-              <component id="861e7" class="javax.swing.JPasswordField" binding="biyingAppIdTextField">
+              <component id="861e7" class="javax.swing.JTextField" binding="biyingAppIdTextField">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -120,7 +124,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="793d6" class="javax.swing.JPasswordField" binding="biyingAppSecretTextField">
+              <component id="793d6" class="javax.swing.JTextField" binding="biyingAppSecretTextField">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -128,24 +132,26 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="5158c" class="javax.swing.JTextArea" binding="bingyingDescription">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <editable value="false"/>
-                  <enabled value="true"/>
-                  <lineWrap value="true"/>
-                  <text value="必应翻译需要到&#10;https://cn.bing.com/partners/developers?mkt=zh-CN&#10;注册账号。&#10;必应需要有微软的Azure账号，要注册Azure账号需要通过信用卡验证，信用卡只支持visa等国际信用卡。"/>
-                </properties>
-              </component>
               <vspacer id="89c07">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
+              <component id="308d9" class="javax.swing.JEditorPane" binding="biyingEditDescription">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <contentType value="text/html"/>
+                  <editable value="false"/>
+                  <text value="&lt;html&gt;&#10;  &lt;head&gt;&#10;    &#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;p align=&quot;left&quot; style=&quot;margin-top: 0&quot;&gt;&#10;      &amp;#24517;&amp;#24212;&amp;#32763;&amp;#35793;&amp;#38656;&amp;#35201;&amp;#21040;&lt;br&gt;&lt;a href=&quot;https://cn.bing.com/partners/developers?mkt=zh-CN&quot;&gt;https://cn.bing.com/partners/developers?mkt=zh-CN&lt;/a&gt;&lt;br&gt;&amp;#27880;&amp;#20876;&amp;#36134;&amp;#21495;&amp;#12290;&lt;br&gt;&amp;#24517;&amp;#24212;&amp;#38656;&amp;#35201;&amp;#26377;&amp;#24494;&amp;#36719;&amp;#30340;Azure&amp;#36134;&amp;#21495;&amp;#65292;&amp;#35201;&amp;#27880;&amp;#20876;Azure&amp;#36134;&amp;#21495;&amp;#38656;&amp;#35201;&amp;#36890;&amp;#36807;&amp;#20449;&amp;#29992;&amp;#21345;&amp;#39564;&amp;#35777;&amp;#65292;&amp;#20449;&amp;#29992;&amp;#21345;&amp;#21482;&amp;#25903;&amp;#25345;visa&amp;#31561;&amp;#22269;&amp;#38469;&amp;#20449;&amp;#29992;&amp;#21345;&amp;#12290;&lt;br&gt;&#10;    &lt;/p&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;&#10;"/>
+                </properties>
+                <clientProperties>
+                  <html.disable class="java.lang.Boolean" value="true"/>
+                </clientProperties>
+              </component>
             </children>
           </grid>
           <grid id="1ea68" binding="baiduJPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -177,7 +183,7 @@
                   <text value="应用秘钥："/>
                 </properties>
               </component>
-              <component id="218f3" class="javax.swing.JPasswordField" binding="baiduAppIdTextField">
+              <component id="218f3" class="javax.swing.JTextField" binding="baiduAppIdTextField">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -185,7 +191,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="222e2" class="javax.swing.JPasswordField" binding="baiduAppSecretTextField">
+              <component id="222e2" class="javax.swing.JTextField" binding="baiduAppSecretTextField">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -193,23 +199,26 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="81b16" class="javax.swing.JTextArea" binding="baiduDescription">
+              <vspacer id="fbf48">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="50329" class="javax.swing.JEditorPane" binding="baiduEditDecription">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
                 <properties>
+                  <contentType value="text/html"/>
                   <editable value="false"/>
-                  <enabled value="true"/>
-                  <text value="百度翻译需要到&#10;http://api.fanyi.baidu.com/&#10;注册账号。&#10;在&#10;https://fanyi-api.baidu.com/choose&#10;开通通用文本翻译服务。&#10;在&#10;http://api.fanyi.baidu.com/manage/developer&#10;查看应用ID和秘钥。&#10;刚注册账号后需要进行实名认证。&#10;通过实名认证后，每月200万字符免费。"/>
+                  <text value="&lt;html&gt;&#10;  &lt;head&gt;&#10;    &#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;p align=&quot;left&quot; style=&quot;margin-top: 0&quot;&gt;&#10;      &amp;#30334;&amp;#24230;&amp;#32763;&amp;#35793;&amp;#38656;&amp;#35201;&amp;#21040;&lt;br&gt;&lt;a href=&quot;http://api.fanyi.baidu.com/&quot;&gt;http://api.fanyi.baidu.com/&lt;/a&gt;&lt;br&gt;&amp;#27880;&amp;#20876;&amp;#36134;&amp;#21495;&amp;#12290;&lt;br&gt;&amp;#22312;&lt;br&gt;&lt;a href=&quot;https://fanyi-api.baidu.com/choose&quot;&gt;https://fanyi-api.baidu.com/choose&lt;/a&gt;&lt;br&gt;&amp;#24320;&amp;#36890;&amp;#36890;&amp;#29992;&amp;#25991;&amp;#26412;&amp;#32763;&amp;#35793;&amp;#26381;&amp;#21153;&amp;#12290;&lt;br&gt;&amp;#22312;&lt;br&gt;&lt;a href=&quot;http://api.fanyi.baidu.com/manage/developer&quot;&gt;http://api.fanyi.baidu.com/manage/developer&lt;/a&gt;&lt;br&gt;&amp;#26597;&amp;#30475;&amp;#24212;&amp;#29992;ID&amp;#21644;&amp;#31192;&amp;#38053;&amp;#12290;&lt;br&gt;&amp;#21018;&amp;#27880;&amp;#20876;&amp;#36134;&amp;#21495;&amp;#21518;&amp;#38656;&amp;#35201;&amp;#36827;&amp;#34892;&amp;#23454;&amp;#21517;&amp;#35748;&amp;#35777;&amp;#12290;&lt;br&gt;&amp;#36890;&amp;#36807;&amp;#23454;&amp;#21517;&amp;#35748;&amp;#35777;&amp;#21518;&amp;#65292;&amp;#27599;&amp;#26376;200&amp;#19975;&amp;#23383;&amp;#31526;&amp;#20813;&amp;#36153;&amp;#12290;&lt;br&gt;&#10;    &lt;/p&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;&#10;"/>
                 </properties>
+                <clientProperties>
+                  <html.disable class="java.lang.Boolean" value="true"/>
+                </clientProperties>
               </component>
-              <vspacer id="fbf48">
-                <constraints>
-                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                </constraints>
-              </vspacer>
             </children>
           </grid>
           <grid id="b9569" binding="deeplJPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -235,7 +244,7 @@
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <component id="55bd8" class="javax.swing.JPasswordField" binding="deeplAppSecretTextField">
+              <component id="55bd8" class="javax.swing.JTextField" binding="deeplAppSecretTextField">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -243,23 +252,26 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="17a10" class="javax.swing.JTextArea" binding="deeplDescription">
-                <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <editable value="false"/>
-                  <enabled value="true"/>
-                  <text value="国内无法使用，请确保浏览器可调用，否则请勿使用。"/>
-                </properties>
-              </component>
               <vspacer id="cef43">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
+              <component id="7154e" class="javax.swing.JEditorPane" binding="deeplEditDecription">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <contentType value="text/html"/>
+                  <editable value="false"/>
+                  <text value="&lt;html&gt;&#10;  &lt;head&gt;&#10;    &#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;p align=&quot;left&quot; style=&quot;margin-top: 0&quot;&gt;&#10;      &amp;#22269;&amp;#20869;&amp;#26080;&amp;#27861;&amp;#20351;&amp;#29992;&amp;#65292;&amp;#35831;&amp;#30830;&amp;#20445;&amp;#27983;&amp;#35272;&amp;#22120;&amp;#21487;&amp;#35843;&amp;#29992;&amp;#65292;&amp;#21542;&amp;#21017;&amp;#35831;&amp;#21247;&amp;#20351;&amp;#29992;&amp;#12290;&#10;    &lt;/p&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;&#10;"/>
+                </properties>
+                <clientProperties>
+                  <html.disable class="java.lang.Boolean" value="true"/>
+                </clientProperties>
+              </component>
             </children>
           </grid>
           <grid id="9946" binding="caiyunJPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -283,7 +295,7 @@
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <component id="9b39f" class="javax.swing.JPasswordField" binding="caiyunAppSecretTextField">
+              <component id="9b39f" class="javax.swing.JTextField" binding="caiyunAppSecretTextField">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -291,23 +303,26 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="d750e" class="javax.swing.JTextArea" binding="caiyunDescription">
+              <vspacer id="94628">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="50e5a" class="javax.swing.JEditorPane" binding="caiyunEditDescription">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
                 <properties>
+                  <contentType value="text/html"/>
                   <editable value="false"/>
-                  <enabled value="true"/>
-                  <text value="彩云小译需要到&#10;https://dashboard.caiyunapp.com/user/user/info/#&#10;注册账号。&#10;注册完账后后需要通过人工审核，人工审核节假日较慢。&#10;审核通过后给予100万/月的免费翻译字符数(包含空格和标点)&#10;定价：100万/20元,超过才会开始收费。&#10;&#10;彩云小译不在免费，原有额度用完后不在有额度了。--2023.9.23"/>
+                  <text value="&lt;html&gt;&#10;  &lt;head&gt;&#10;    &#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;p align=&quot;left&quot; style=&quot;margin-top: 0&quot;&gt;&#10;      &amp;#24425;&amp;#20113;&amp;#23567;&amp;#35793;&amp;#38656;&amp;#35201;&amp;#21040;&lt;br&gt;&lt;a href=&quot;https://dashboard.caiyunapp.com/user/user/info/#&quot;&gt;https://dashboard.caiyunapp.com/user/user/info/#&lt;/a&gt;&lt;br&gt;&amp;#27880;&amp;#20876;&amp;#36134;&amp;#21495;&amp;#12290;&lt;br&gt;&amp;#27880;&amp;#20876;&amp;#23436;&amp;#36134;&amp;#21518;&amp;#21518;&amp;#38656;&amp;#35201;&amp;#36890;&amp;#36807;&amp;#20154;&amp;#24037;&amp;#23457;&amp;#26680;&amp;#65292;&amp;#20154;&amp;#24037;&amp;#23457;&amp;#26680;&amp;#33410;&amp;#20551;&amp;#26085;&amp;#36739;&amp;#24930;&amp;#12290;&lt;br&gt;&amp;#23457;&amp;#26680;&amp;#36890;&amp;#36807;&amp;#21518;&amp;#32473;&amp;#20104;100&amp;#19975;/&amp;#26376;&amp;#30340;&amp;#20813;&amp;#36153;&amp;#32763;&amp;#35793;&amp;#23383;&amp;#31526;&amp;#25968;(&amp;#21253;&amp;#21547;&amp;#31354;&amp;#26684;&amp;#21644;&amp;#26631;&amp;#28857;)&lt;br&gt;&amp;#23450;&amp;#20215;&amp;#65306;100&amp;#19975;/20&amp;#20803;,&amp;#36229;&amp;#36807;&amp;#25165;&amp;#20250;&amp;#24320;&amp;#22987;&amp;#25910;&amp;#36153;&amp;#12290;&lt;br&gt;&lt;br&gt;&amp;#24425;&amp;#20113;&amp;#23567;&amp;#35793;&amp;#19981;&amp;#22312;&amp;#20813;&amp;#36153;&amp;#65292;&amp;#21407;&amp;#26377;&amp;#39069;&amp;#24230;&amp;#29992;&amp;#23436;&amp;#21518;&amp;#19981;&amp;#22312;&amp;#26377;&amp;#39069;&amp;#24230;&amp;#20102;&amp;#12290;--2023.9.23&lt;br&gt;&#10;    &lt;/p&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;&#10;"/>
                 </properties>
+                <clientProperties>
+                  <html.disable class="java.lang.Boolean" value="true"/>
+                </clientProperties>
               </component>
-              <vspacer id="94628">
-                <constraints>
-                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                </constraints>
-              </vspacer>
             </children>
           </grid>
           <grid id="48c6c" binding="tengxunjifanJPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -334,7 +349,7 @@
                   <text value="应用秘钥："/>
                 </properties>
               </component>
-              <component id="de9c9" class="javax.swing.JPasswordField" binding="tengxunjifanAppIdTextField">
+              <component id="de9c9" class="javax.swing.JTextField" binding="tengxunjifanAppIdTextField">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="448" height="30"/>
@@ -347,7 +362,7 @@
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <component id="7cc47" class="javax.swing.JPasswordField" binding="tengxunjifanAppSecretTextField">
+              <component id="7cc47" class="javax.swing.JTextField" binding="tengxunjifanAppSecretTextField">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="448" height="30"/>
@@ -355,23 +370,26 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="f75dd" class="javax.swing.JTextArea" binding="tengxunjifanDescription">
-                <constraints>
-                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="448" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <editable value="false"/>
-                  <enabled value="true"/>
-                  <text value="腾讯机器翻译需要到&#10;https://console.cloud.tencent.com/tmt&#10;注册账号。&#10;然后在&#10;https://console.cloud.tencent.com/cam/capi&#10;新建秘钥。&#10;刚注册账号后需要进行实名认证。&#10;文本翻译的每月免费额度为500万字符，到达免费额度无法继续使用&#10;不会产生费用。"/>
-                </properties>
-              </component>
               <vspacer id="45934">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
+              <component id="ed82" class="javax.swing.JEditorPane" binding="tengxunjifanEditDescription">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <contentType value="text/html"/>
+                  <editable value="false"/>
+                  <text value="&lt;html&gt;&#10;  &lt;head&gt;&#10;    &#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;p align=&quot;left&quot; style=&quot;margin-top: 0&quot;&gt;&#10;      &amp;#33150;&amp;#35759;&amp;#26426;&amp;#22120;&amp;#32763;&amp;#35793;&amp;#38656;&amp;#35201;&amp;#21040;&lt;br&gt;&lt;a href=&quot;https://console.cloud.tencent.com/tmt&quot;&gt;https://console.cloud.tencent.com/tmt&lt;/a&gt;&lt;br&gt;&amp;#27880;&amp;#20876;&amp;#36134;&amp;#21495;&amp;#12290;&lt;br&gt;&amp;#28982;&amp;#21518;&amp;#22312;&lt;br&gt;&lt;a href=&quot;https://console.cloud.tencent.com/cam/capi&quot;&gt;https://console.cloud.tencent.com/cam/capi&lt;/a&gt;&lt;br&gt;&amp;#26032;&amp;#24314;&amp;#31192;&amp;#38053;&amp;#12290;&lt;br&gt;&amp;#21018;&amp;#27880;&amp;#20876;&amp;#36134;&amp;#21495;&amp;#21518;&amp;#38656;&amp;#35201;&amp;#36827;&amp;#34892;&amp;#23454;&amp;#21517;&amp;#35748;&amp;#35777;&amp;#12290;&lt;br&gt;&amp;#25991;&amp;#26412;&amp;#32763;&amp;#35793;&amp;#30340;&amp;#27599;&amp;#26376;&amp;#20813;&amp;#36153;&amp;#39069;&amp;#24230;&amp;#20026;500&amp;#19975;&amp;#23383;&amp;#31526;&amp;#65292;&amp;#21040;&amp;#36798;&amp;#20813;&amp;#36153;&amp;#39069;&amp;#24230;&amp;#26080;&amp;#27861;&amp;#32487;&amp;#32493;&amp;#20351;&amp;#29992;&lt;br&gt;&amp;#19981;&amp;#20250;&amp;#20135;&amp;#29983;&amp;#36153;&amp;#29992;&amp;#12290;&lt;br&gt;&#10;    &lt;/p&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;&#10;"/>
+                </properties>
+                <clientProperties>
+                  <html.disable class="java.lang.Boolean" value="true"/>
+                </clientProperties>
+              </component>
             </children>
           </grid>
           <grid id="63e10" binding="huaweijifanJPanel" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -390,7 +408,7 @@
                   <text value="项目ID："/>
                 </properties>
               </component>
-              <component id="496d4" class="javax.swing.JPasswordField" binding="huaweijifanProjectIdTextField">
+              <component id="496d4" class="javax.swing.JTextField" binding="huaweijifanProjectIdTextField">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="385" height="30"/>
@@ -406,25 +424,13 @@
                   <text value="应用秘钥："/>
                 </properties>
               </component>
-              <component id="5bd3d" class="javax.swing.JPasswordField" binding="huaweijifanAppSecretTextField">
+              <component id="5bd3d" class="javax.swing.JTextField" binding="huaweijifanAppSecretTextField">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="385" height="30"/>
                   </grid>
                 </constraints>
                 <properties/>
-              </component>
-              <component id="5c76f" class="javax.swing.JTextArea" binding="huaweijifanDescription">
-                <constraints>
-                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="385" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <editable value="false"/>
-                  <enabled value="true"/>
-                  <text value="华为机器翻译需要到&#10;https://developer.huaweicloud.com/&#10;注册账号。&#10;然后在【产品列表】-【人工智能】-【自然语言处理】&#10;中选择【文本翻译】，可能会提示切换到&quot;华北-北京四&quot;地区&#10;开通服务。&#10;接着到&#10;https://console.huaweicloud.com/iam/?region=cn-north-4#/mine/accessKey&#10;新建秘钥,新建完必须下载，否则只能删除重新生成。&#10;在&#10;https://console.huaweicloud.com/iam/?region=cn-north-4&amp;locale=zh-cn#/mine/apiCredential&#10;查看【华北-北京四】区域的项目id。&#10;刚注册账号后需要进行实名认证。&#10;文本翻译的每月免费额度为100万字符,后付费，可能产生费用。"/>
-                </properties>
               </component>
               <hspacer id="b25d7">
                 <constraints>
@@ -439,7 +445,7 @@
                   <text value="应用ID："/>
                 </properties>
               </component>
-              <component id="f9e12" class="javax.swing.JPasswordField" binding="huaweijifanAppIdTextField">
+              <component id="f9e12" class="javax.swing.JTextField" binding="huaweijifanAppIdTextField">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="385" height="30"/>
@@ -452,6 +458,21 @@
                   <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
+              <component id="316b2" class="javax.swing.JEditorPane" binding="huaweijifanEditDescription">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <contentType value="text/html"/>
+                  <editable value="false"/>
+                  <text value="&lt;html&gt;&#10;  &lt;head&gt;&#10;    &#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;p align=&quot;left&quot; style=&quot;margin-top: 0&quot;&gt;&#10;      &amp;#21326;&amp;#20026;&amp;#26426;&amp;#22120;&amp;#32763;&amp;#35793;&amp;#38656;&amp;#35201;&amp;#21040;&lt;br&gt;&lt;a href=&quot;https://developer.huaweicloud.com/&quot;&gt;https://developer.huaweicloud.com/&lt;/a&gt;&lt;br&gt;&amp;#27880;&amp;#20876;&amp;#36134;&amp;#21495;&amp;#12290;&lt;br&gt;&amp;#28982;&amp;#21518;&amp;#22312;&amp;#12304;&amp;#20135;&amp;#21697;&amp;#21015;&amp;#34920;&amp;#12305;-&amp;#12304;&amp;#20154;&amp;#24037;&amp;#26234;&amp;#33021;&amp;#12305;-&amp;#12304;&amp;#33258;&amp;#28982;&amp;#35821;&amp;#35328;&amp;#22788;&amp;#29702;&amp;#12305;&lt;br&gt;&amp;#20013;&amp;#36873;&amp;#25321;&amp;#12304;&amp;#25991;&amp;#26412;&amp;#32763;&amp;#35793;&amp;#12305;&amp;#65292;&amp;#21487;&amp;#33021;&amp;#20250;&amp;#25552;&amp;#31034;&amp;#20999;&amp;#25442;&amp;#21040;&amp;quot;&amp;#21326;&amp;#21271;-&amp;#21271;&amp;#20140;&amp;#22235;&amp;quot;&amp;#22320;&amp;#21306;&lt;br&gt;&amp;#24320;&amp;#36890;&amp;#26381;&amp;#21153;&amp;#12290;&lt;br&gt;&amp;#25509;&amp;#30528;&amp;#21040;&lt;br&gt;&lt;a href=&quot;https://console.huaweicloud.com/iam/?region=cn-north-4#/mine/accessKey&quot;&gt;https://console.huaweicloud.com/iam/?region=cn-north-4#/mine/accessKey&lt;/a&gt;&lt;br&gt;&amp;#26032;&amp;#24314;&amp;#31192;&amp;#38053;,&amp;#26032;&amp;#24314;&amp;#23436;&amp;#24517;&amp;#39035;&amp;#19979;&amp;#36733;&amp;#65292;&amp;#21542;&amp;#21017;&amp;#21482;&amp;#33021;&amp;#21024;&amp;#38500;&amp;#37325;&amp;#26032;&amp;#29983;&amp;#25104;&amp;#12290;&lt;br&gt;&amp;#22312;&lt;br&gt;&lt;a href=&quot;https://console.huaweicloud.com/iam/?region=cn-north-4&amp;locale=zh-cn#/mine/apiCredential&quot;&gt;https://console.huaweicloud.com/iam/?region=cn-north-4&amp;amp;locale=zh-cn#/mine/apiCredential&lt;/a&gt;&lt;br&gt;&amp;#26597;&amp;#30475;&amp;#12304;&amp;#21326;&amp;#21271;-&amp;#21271;&amp;#20140;&amp;#22235;&amp;#12305;&amp;#21306;&amp;#22495;&amp;#30340;&amp;#39033;&amp;#30446;id&amp;#12290;&lt;br&gt;&amp;#21018;&amp;#27880;&amp;#20876;&amp;#36134;&amp;#21495;&amp;#21518;&amp;#38656;&amp;#35201;&amp;#36827;&amp;#34892;&amp;#23454;&amp;#21517;&amp;#35748;&amp;#35777;&amp;#12290;&lt;br&gt;&amp;#25991;&amp;#26412;&amp;#32763;&amp;#35793;&amp;#30340;&amp;#27599;&amp;#26376;&amp;#20813;&amp;#36153;&amp;#39069;&amp;#24230;&amp;#20026;100&amp;#19975;&amp;#23383;&amp;#31526;,&amp;#21518;&amp;#20184;&amp;#36153;&amp;#65292;&amp;#21487;&amp;#33021;&amp;#20135;&amp;#29983;&amp;#36153;&amp;#29992;&amp;#12290;&lt;br&gt;&#10;    &lt;/p&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;&#10;"/>
+                </properties>
+                <clientProperties>
+                  <html.disable class="java.lang.Boolean" value="true"/>
+                </clientProperties>
+              </component>
             </children>
           </grid>
           <grid id="eeb55" binding="alijifanJPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -470,7 +491,7 @@
                   <text value="应用ID："/>
                 </properties>
               </component>
-              <component id="a81a6" class="javax.swing.JPasswordField" binding="alijifanAppIdTextField">
+              <component id="a81a6" class="javax.swing.JTextField" binding="alijifanAppIdTextField">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="448" height="30"/>
@@ -486,25 +507,13 @@
                   <text value="应用秘钥："/>
                 </properties>
               </component>
-              <component id="cf06a" class="javax.swing.JPasswordField" binding="alijifanAppSecretTextField">
+              <component id="cf06a" class="javax.swing.JTextField" binding="alijifanAppSecretTextField">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="448" height="30"/>
                   </grid>
                 </constraints>
                 <properties/>
-              </component>
-              <component id="c0b46" class="javax.swing.JTextArea" binding="alijifanDescription">
-                <constraints>
-                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="448" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <editable value="false"/>
-                  <enabled value="true"/>
-                  <text value="阿里机翻需要在&#10;https://cn.aliyun.com/&#10;使用支付宝扫码登录&#10;选择【产品】-【人工智能与机器学习】-【自然语言处理】-【机器翻译】&#10;立即开通【通用版翻译引擎】&#10;在&#10;https://ram.console.aliyun.com/manage/ak&#10;创建应用秘钥，并查看秘钥信息。&#10;每月100万字符免费额度，后付费，可能产生费用。"/>
-                </properties>
               </component>
               <hspacer id="79988">
                 <constraints>
@@ -516,6 +525,21 @@
                   <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
+              <component id="b65dc" class="javax.swing.JEditorPane" binding="alijifanEditDescription">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <contentType value="text/html"/>
+                  <editable value="false"/>
+                  <text value="&lt;html&gt;&#10;  &lt;head&gt;&#10;    &#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;p align=&quot;left&quot; style=&quot;margin-top: 0&quot;&gt;&#10;      &amp;#38463;&amp;#37324;&amp;#26426;&amp;#32763;&amp;#38656;&amp;#35201;&amp;#22312;&lt;br&gt;&lt;a href=&quot;https://cn.aliyun.com/&quot;&gt;https://cn.aliyun.com/&lt;/a&gt;&lt;br&gt;&amp;#20351;&amp;#29992;&amp;#25903;&amp;#20184;&amp;#23453;&amp;#25195;&amp;#30721;&amp;#30331;&amp;#24405;&lt;br&gt;&amp;#36873;&amp;#25321;&amp;#12304;&amp;#20135;&amp;#21697;&amp;#12305;-&amp;#12304;&amp;#20154;&amp;#24037;&amp;#26234;&amp;#33021;&amp;#19982;&amp;#26426;&amp;#22120;&amp;#23398;&amp;#20064;&amp;#12305;-&amp;#12304;&amp;#33258;&amp;#28982;&amp;#35821;&amp;#35328;&amp;#22788;&amp;#29702;&amp;#12305;-&amp;#12304;&amp;#26426;&amp;#22120;&amp;#32763;&amp;#35793;&amp;#12305;&lt;br&gt;&amp;#31435;&amp;#21363;&amp;#24320;&amp;#36890;&amp;#12304;&amp;#36890;&amp;#29992;&amp;#29256;&amp;#32763;&amp;#35793;&amp;#24341;&amp;#25806;&amp;#12305;&lt;br&gt;&amp;#22312;&lt;br&gt;&lt;a href=&quot;https://ram.console.aliyun.com/manage/ak&quot;&gt;https://ram.console.aliyun.com/manage/ak&lt;/a&gt;&lt;br&gt;&amp;#21019;&amp;#24314;&amp;#24212;&amp;#29992;&amp;#31192;&amp;#38053;&amp;#65292;&amp;#24182;&amp;#26597;&amp;#30475;&amp;#31192;&amp;#38053;&amp;#20449;&amp;#24687;&amp;#12290;&lt;br&gt;&amp;#27599;&amp;#26376;100&amp;#19975;&amp;#23383;&amp;#31526;&amp;#20813;&amp;#36153;&amp;#39069;&amp;#24230;&amp;#65292;&amp;#21518;&amp;#20184;&amp;#36153;&amp;#65292;&amp;#21487;&amp;#33021;&amp;#20135;&amp;#29983;&amp;#36153;&amp;#29992;&amp;#12290;&lt;br&gt;&#10;    &lt;/p&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;&#10;"/>
+                </properties>
+                <clientProperties>
+                  <html.disable class="java.lang.Boolean" value="true"/>
+                </clientProperties>
+              </component>
             </children>
           </grid>
         </children>

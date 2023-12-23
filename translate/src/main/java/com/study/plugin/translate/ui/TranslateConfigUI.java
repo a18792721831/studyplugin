@@ -1,8 +1,14 @@
 package com.study.plugin.translate.ui;
 
+import com.study.plugin.translate.utils.NotificationUtil;
 import lombok.Getter;
 
 import javax.swing.*;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 
 public class TranslateConfigUI {
     @Getter
@@ -11,94 +17,119 @@ public class TranslateConfigUI {
     private JPanel youdaoJPanel;
     private JPanel biyingJPanel;
     private JPanel baiduJPanel;
-    private JPasswordField youdaoAppIdTextField;
-    private JPasswordField youdaoAppSecretTextField;
-    private JPasswordField biyingAppIdTextField;
-    private JPasswordField biyingAppSecretTextField;
-    private JPasswordField baiduAppIdTextField;
-    private JPasswordField baiduAppSecretTextField;
+    private JTextField youdaoAppSecretTextField;
+    private JTextField biyingAppIdTextField;
+    private JTextField biyingAppSecretTextField;
+    private JTextField baiduAppIdTextField;
+    private JTextField baiduAppSecretTextField;
     private JPanel deeplJPanel;
-    private JPasswordField deeplAppSecretTextField;
+    private JTextField deeplAppSecretTextField;
     private JPanel caiyunJPanel;
-    private JPasswordField caiyunAppSecretTextField;
-    private JTextArea youdaoDescription;
-    private JTextArea bingyingDescription;
-    private JTextArea baiduDescription;
-    private JTextArea deeplDescription;
-    private JTextArea caiyunDescription;
+    private JTextField caiyunAppSecretTextField;
     private JPanel tengxunjifanJPanel;
-    private JPasswordField tengxunjifanAppIdTextField;
-    private JPasswordField tengxunjifanAppSecretTextField;
-    private JPasswordField huaweijifanProjectIdTextField;
-    private JPasswordField huaweijifanAppSecretTextField;
+    private JTextField tengxunjifanAppIdTextField;
+    private JTextField tengxunjifanAppSecretTextField;
+    private JTextField huaweijifanProjectIdTextField;
+    private JTextField huaweijifanAppSecretTextField;
     private JPanel huaweijifanJPanel;
     private JPanel alijifanJPanel;
-    private JTextArea tengxunjifanDescription;
-    private JTextArea huaweijifanDescription;
-    private JPasswordField huaweijifanAppIdTextField;
-    private JPasswordField alijifanAppIdTextField;
-    private JPasswordField alijifanAppSecretTextField;
-    private JTextArea alijifanDescription;
+    private JTextField huaweijifanAppIdTextField;
+    private JTextField alijifanAppIdTextField;
+    private JTextField alijifanAppSecretTextField;
     private JComboBox outFormatCombox;
+    private JEditorPane youdaoEditDescription;
+    private JEditorPane biyingEditDescription;
+    private JEditorPane baiduEditDecription;
+    private JEditorPane deeplEditDecription;
+    private JEditorPane caiyunEditDescription;
+    private JEditorPane tengxunjifanEditDescription;
+    private JEditorPane huaweijifanEditDescription;
+    private JEditorPane alijifanEditDescription;
+    private JTextField youdaoAppIdTextField;
+
+    public TranslateConfigUI() {
+        HyperlinkListener hyperlinkEventConsumer = (HyperlinkEvent e) -> {
+            if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                StringSelection stringSelection = new StringSelection(e.getURL().toString());
+                Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard.setContents(stringSelection, null);
+                try {
+                    Desktop.getDesktop().browse(e.getURL().toURI());
+                } catch (Exception e1) {
+                    NotificationUtil.error("调用默认浏览器打开网址失败，网址已复制到粘贴板，请粘贴打开！");
+                }
+            }
+        };
+        youdaoEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
+        biyingEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
+        baiduEditDecription.addHyperlinkListener(hyperlinkEventConsumer);
+        deeplEditDecription.addHyperlinkListener(hyperlinkEventConsumer);
+        caiyunEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
+        tengxunjifanEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
+        huaweijifanEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
+        alijifanEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
+
+
+    }
 
     public String getYoudaoAppId() {
-        return String.valueOf(youdaoAppIdTextField.getPassword()).trim();
+        return String.valueOf(youdaoAppIdTextField.getText()).trim();
     }
 
     public String getYoudaoAppSecret() {
-        return String.valueOf(youdaoAppSecretTextField.getPassword()).trim();
+        return String.valueOf(youdaoAppSecretTextField.getText()).trim();
     }
 
     public String getBiyingAppId() {
-        return String.valueOf(biyingAppIdTextField.getPassword()).trim();
+        return String.valueOf(biyingAppIdTextField.getText()).trim();
     }
 
     public String getBiyingAppSecret() {
-        return String.valueOf(biyingAppSecretTextField.getPassword()).trim();
+        return String.valueOf(biyingAppSecretTextField.getText()).trim();
     }
 
     public String getBaiduAppId() {
-        return String.valueOf(baiduAppIdTextField.getPassword()).trim();
+        return String.valueOf(baiduAppIdTextField.getText()).trim();
     }
 
     public String getBaiduAppSecret() {
-        return String.valueOf(baiduAppSecretTextField.getPassword()).trim();
+        return String.valueOf(baiduAppSecretTextField.getText()).trim();
     }
 
     public String getDeeplAppSecret() {
-        return String.valueOf(deeplAppSecretTextField.getPassword()).trim();
+        return String.valueOf(deeplAppSecretTextField.getText()).trim();
     }
 
     public String getCaiyunAppSecret() {
-        return String.valueOf(caiyunAppSecretTextField.getPassword()).trim();
+        return String.valueOf(caiyunAppSecretTextField.getText()).trim();
     }
 
     public String getTengxunjifanAppId() {
-        return String.valueOf(tengxunjifanAppIdTextField.getPassword()).trim();
+        return String.valueOf(tengxunjifanAppIdTextField.getText()).trim();
     }
 
     public String getTengxunjifanAppSecret() {
-        return String.valueOf(tengxunjifanAppSecretTextField.getPassword()).trim();
+        return String.valueOf(tengxunjifanAppSecretTextField.getText()).trim();
     }
 
     public String getHuaweijifanProjectId() {
-        return String.valueOf(huaweijifanProjectIdTextField.getPassword()).trim();
+        return String.valueOf(huaweijifanProjectIdTextField.getText()).trim();
     }
 
     public String getHuaweijifanAppId() {
-        return String.valueOf(huaweijifanAppIdTextField.getPassword()).trim();
+        return String.valueOf(huaweijifanAppIdTextField.getText()).trim();
     }
 
     public String getHuaweijifanAppSecret() {
-        return String.valueOf(huaweijifanAppSecretTextField.getPassword()).trim();
+        return String.valueOf(huaweijifanAppSecretTextField.getText()).trim();
     }
 
     public String getAlijifanAppId() {
-        return String.valueOf(alijifanAppIdTextField.getPassword()).trim();
+        return String.valueOf(alijifanAppIdTextField.getText()).trim();
     }
 
     public String getAlijifanAppSecret() {
-        return String.valueOf(alijifanAppSecretTextField.getPassword()).trim();
+        return String.valueOf(alijifanAppSecretTextField.getText()).trim();
     }
 
     /**

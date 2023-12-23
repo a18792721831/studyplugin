@@ -14,12 +14,6 @@ public final class DeeplTranslateRestService extends TranslateRestService implem
     @Setter
     private String APP_SECRET = appInfoService.get(DEEPL_APP_SECRET_SAVE_KEY);
 
-//    public DeeplTranslateRestService() {
-//        super();
-//        if (!isInit.get()) {
-//            init();
-//        }
-//    }
 
     @Override
     public String translate(String word) {

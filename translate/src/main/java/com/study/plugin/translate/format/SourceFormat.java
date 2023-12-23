@@ -6,12 +6,12 @@ import com.intellij.openapi.components.Service;
 public final class SourceFormat implements IWordFormat{
     @Override
     public boolean isMatch(String word) {
-        return false;
+        return true;
     }
 
     @Override
     public String format(String word) {
-        return null;
+        return word;
     }
 
     @Override
