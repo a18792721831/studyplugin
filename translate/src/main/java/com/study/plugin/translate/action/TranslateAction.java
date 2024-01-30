@@ -1,6 +1,5 @@
 package com.study.plugin.translate.action;
 
-import cn.hutool.core.util.StrUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -65,7 +64,7 @@ public class TranslateAction extends AnAction implements PluginAppKeys {
         String word = selectionModel.getSelectedText();
         String enWord = callTranslate(word);
         // 如果所有厂商翻译失败，那么通知并结束
-        if (StrUtil.isBlank(enWord)) {
+        if (Tools.isBlank(enWord)) {
             NotificationUtil.error("翻译失败，请稍后重试！");
             return;
         }
