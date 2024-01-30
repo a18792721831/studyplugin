@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.study.plugin.translate"
-version = "6.2"
+version = "6.3"
 
 repositories {
     mavenCentral()
@@ -13,8 +13,8 @@ repositories {
 dependencies{
     compileOnly("org.projectlombok:lombok:1.18.30")
     annotationProcessor("org.projectlombok:lombok:1.18.30")
-    implementation("cn.hutool:hutool-json:5.8.23")
-    implementation("cn.hutool:hutool-http:5.8.23")
+    implementation("cn.hutool:hutool-json:5.8.25")
+    implementation("cn.hutool:hutool-http:5.8.25")
     implementation("javax.xml.bind:jaxb-api:2.3.1")
 }
 

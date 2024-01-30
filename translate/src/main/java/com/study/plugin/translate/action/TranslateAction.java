@@ -18,6 +18,7 @@ import com.study.plugin.translate.format.*;
 import com.study.plugin.translate.service.*;
 import com.study.plugin.translate.utils.NotificationUtil;
 import com.study.plugin.translate.utils.PluginAppKeys;
+import com.study.plugin.translate.utils.Tools;
 import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
@@ -102,7 +103,7 @@ public class TranslateAction extends AnAction implements PluginAppKeys {
             // try包围则是当其中一个子类出现异常的时候，不会影响其他子类
             try {
                 String enWord = service.translate(word);
-                if (StringUtils.isNotBlank(enWord)) {
+                if (Tools.isNotBlank(enWord)) {
                     // 只要有任意一个子类成功翻译，那么直接结束，不在尝试其他的厂商
                     return enWord;
                 }
