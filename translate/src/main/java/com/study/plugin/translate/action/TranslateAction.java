@@ -1,6 +1,5 @@
 package com.study.plugin.translate.action;
 
-import cn.hutool.core.util.ReUtil;
 import cn.hutool.core.util.StrUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -19,7 +18,6 @@ import com.study.plugin.translate.service.*;
 import com.study.plugin.translate.utils.NotificationUtil;
 import com.study.plugin.translate.utils.PluginAppKeys;
 import com.study.plugin.translate.utils.Tools;
-import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
