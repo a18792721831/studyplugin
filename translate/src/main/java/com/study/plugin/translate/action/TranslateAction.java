@@ -57,7 +57,7 @@ public class TranslateAction extends AnAction implements PluginAppKeys {
     public void actionPerformed(AnActionEvent e) {
         Editor editor = e.getData(CommonDataKeys.EDITOR);
         if (editor == null) {
-            NotificationUtil.error("翻译失败，请稍后重试！");
+            NotificationUtil.error("translate field, please try later!");
             return;
         }
         SelectionModel selectionModel = editor.getSelectionModel();
@@ -65,7 +65,7 @@ public class TranslateAction extends AnAction implements PluginAppKeys {
         String enWord = callTranslate(word);
         // 如果所有厂商翻译失败，那么通知并结束
         if (Tools.isBlank(enWord)) {
-            NotificationUtil.error("翻译失败，请稍后重试！");
+            NotificationUtil.error("translate field, please try later!");
             return;
         }
         IWordFormat format = allFormat.get(appInfoService.getInt(OUTPUT_FORMAT_MODE));
