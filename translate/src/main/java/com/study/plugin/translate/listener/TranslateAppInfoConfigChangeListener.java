@@ -2,13 +2,7 @@ package com.study.plugin.translate.listener;
 
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
-import com.study.plugin.translate.service.AlijifanTranslateRestService;
-import com.study.plugin.translate.service.BaiduTranslateRestService;
-import com.study.plugin.translate.service.CaiyunTranslateRestService;
-import com.study.plugin.translate.service.DeeplTranslateRestService;
-import com.study.plugin.translate.service.HuaweijifanTranslateRestService;
-import com.study.plugin.translate.service.TengxunjifanTranslateRestService;
-import com.study.plugin.translate.service.YoudaoTranslateRestService;
+import com.study.plugin.translate.service.*;
 
 public class TranslateAppInfoConfigChangeListener implements ITranslateAppInfoConfigChange{
 
@@ -27,6 +21,10 @@ public class TranslateAppInfoConfigChangeListener implements ITranslateAppInfoCo
     private HuaweijifanTranslateRestService huaweijifanTranslateRestService = application.getService(HuaweijifanTranslateRestService.class);
 
     private AlijifanTranslateRestService alijifanTranslateRestService = application.getService(AlijifanTranslateRestService.class);
+
+    private TencenthunyuanTranslateRestService tencenthunyuanTranslateRestService = application.getService(TencenthunyuanTranslateRestService.class);
+
+    private BaiduYi34BTranslateRestService baiduYi34BTranslateRestService = application.getService(BaiduYi34BTranslateRestService.class);
 
     @Override
     public void youdaoChange(String appId, String appSecret) {
@@ -68,4 +66,20 @@ public class TranslateAppInfoConfigChangeListener implements ITranslateAppInfoCo
         alijifanTranslateRestService.setAPP_ID(appId);
         alijifanTranslateRestService.setAPP_SECRET(appSecret);
     }
+
+    @Override
+    public void tencenthunyuanChange(String appId, String appSecret, String prompt) {
+        tencenthunyuanTranslateRestService.setAPP_ID(appId);
+        tencenthunyuanTranslateRestService.setAPP_SECRET(appSecret);
+        tencenthunyuanTranslateRestService.setPROMPT(prompt);
+    }
+
+    @Override
+    public void baiduqianfanChange(String appId, String appSecret, String prompt) {
+        baiduYi34BTranslateRestService.setAPP_ID(appId);
+        baiduYi34BTranslateRestService.setAPP_SECRET(appSecret);
+        baiduYi34BTranslateRestService.setPROMPT(prompt);
+    }
+
+
 }

@@ -18,6 +18,14 @@ public interface PluginAppKeys {
     String HUAWEIJIFAN_APP_SECRET_SAVE_KEY = "com.study.plugin.translate.huaweijifan.app.secret";
     String ALIJIFAN_APP_ID_SAVE_KEY = "com.study.plugin.translate.alijifan.app.id";
     String ALIJIFAN_APP_SECRET_SAVE_KEY = "com.study.plugin.translate.alijifan.app.secret";
+    String TENCENTHUNYUAN_APP_ID_SAVE_KEY = "com.study.plugin.translate.tencenthunyuan.app.id";
+    String TENCENTHUNYUAN_APP_SECRET_SAVE_KEY = "com.study.plugin.translate.tencenthunyuan.app.secret";
+    String TENCENTHUNYUAN_PROMPT_SAVE_KEY = "com.study.plugin.translate.tencenthunyuan.prompt";
+    String BAIDUQIANFAN_APP_ID_SAVE_KEY = "com.study.plugin.translate.baiduqianfan.app.id";
+    String BAIDUQIANFAN_APP_SECRET_SAVE_KEY = "com.study.plugin.translate.baiduqianfan.app.secret";
+    String BAIDUQIANFAN_PROMPT_SAVE_KEY = "com.study.plugin.translate.baiduqianfan.prompt";
+    String BAIDUQIANFAN_ACCESSTOKEN_SAVE_KEY = "com.study.plugin.translate.baiduqianfan.accesstoken";
+    String BAIDUQIANFAN_ACCESSTOKEN_EXPTIME_SAVE_KEY = "com.study.plugin.translate.baiduqianfan.accesstoken.exptime";
     /**
      * 原文(xx yy)
      * 大驼峰(XxYy)

@@ -46,6 +46,15 @@ public class TranslateConfigUI {
     private JEditorPane huaweijifanEditDescription;
     private JEditorPane alijifanEditDescription;
     private JTextField youdaoAppIdTextField;
+    private JPanel tencenthunyuan;
+    private JTextField tencenthunyuanAppIdTextField;
+    private JTextField tencenthunyuanAppSecretTextField;
+    private JEditorPane tencenthunyuanEditDescription;
+    private JEditorPane tencenthunyuanPromptEditText;
+    private JTextField baiduqianfanAppIdTextField;
+    private JTextField baiduqianfanAppSecretTextFileld;
+    private JEditorPane baiduqianfanPropmtEditText;
+    private JEditorPane baiduqianfanEditDecription;
 
     public TranslateConfigUI() {
         HyperlinkListener hyperlinkEventConsumer = (HyperlinkEvent e) -> {
@@ -68,6 +77,8 @@ public class TranslateConfigUI {
         tengxunjifanEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
         huaweijifanEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
         alijifanEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
+        tencenthunyuanEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
+        baiduqianfanEditDecription.addHyperlinkListener(hyperlinkEventConsumer);
 
 
     }
@@ -130,6 +141,30 @@ public class TranslateConfigUI {
 
     public String getAlijifanAppSecret() {
         return String.valueOf(alijifanAppSecretTextField.getText()).trim();
+    }
+
+    public String getTencenthunyuanAppId() {
+        return String.valueOf(tencenthunyuanAppIdTextField.getText()).trim();
+    }
+
+    public String getTencenthunyuanAppSecret() {
+        return String.valueOf(tencenthunyuanAppSecretTextField.getText()).trim();
+    }
+
+    public String getTencenthunyuanPrompt() {
+        return String.valueOf(tencenthunyuanPromptEditText.getText()).trim();
+    }
+
+    public String getBaiduqianfanAppId() {
+        return String.valueOf(baiduqianfanAppIdTextField.getText()).trim();
+    }
+
+    public String getBaiduqianfanAppSecret() {
+        return String.valueOf(baiduqianfanAppSecretTextFileld.getText()).trim();
+    }
+
+    public String getBaiduqianfanPrompt() {
+        return String.valueOf(baiduqianfanPropmtEditText.getText()).trim();
     }
 
     /**
@@ -202,6 +237,30 @@ public class TranslateConfigUI {
 
     public void setAlijifanAppSecret(String alijifanAppSecret) {
         alijifanAppSecretTextField.setText(alijifanAppSecret);
+    }
+
+    public void setTencenthunyuanAppId(String tencenthunyuanAppId) {
+        tencenthunyuanAppIdTextField.setText(tencenthunyuanAppId);
+    }
+
+    public void setTencenthunyuanAppSecret(String tencenthunyuanAppSecret) {
+        tencenthunyuanAppSecretTextField.setText(tencenthunyuanAppSecret);
+    }
+
+    public void setTencenthunyuanPrompt(String tencenthunyuanPrompt) {
+        tencenthunyuanPromptEditText.setText(tencenthunyuanPrompt);
+    }
+
+    public void setBaiduqianfanAppId(String baiduqianfanAppId) {
+        baiduqianfanAppIdTextField.setText(baiduqianfanAppId);
+    }
+
+    public void setBaiduqianfanAppSecret(String baiduqianfanAppSecret) {
+        baiduqianfanAppSecretTextFileld.setText(baiduqianfanAppSecret);
+    }
+
+    public void setBaiduqianfanPrompt(String baiduqianfanPrompt) {
+        baiduqianfanPropmtEditText.setText(baiduqianfanPrompt);
     }
 
     /**

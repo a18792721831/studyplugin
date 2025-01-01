@@ -12,15 +12,13 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      version 7.0:<br/>
+        <ul>
+          <li>add <code>tencent hunyuan ai translate</code></li>
+          <li>add <code>baidu qianfan ai translate</code></li>
+        </ul>
       version 6.3:<br/>
         fix StringUtils.</br/>
-      version 6.2:<br/>
-      <ul>
-        <li>add format model:<code>source case, PascalCase, camelCase, snake_case, UPPER_SNAKE_CASE,nospace</code>. you can config it for settings. take a look.</li>
-        <li>change html for config description. can use default browse open link, if wrong will be writing clipboard. have a try.</li>
-        <li>change config input <code>JPasswordField -> JTextField</code>. win os can copy and paste, but mac os can not. now win and mac os can do.</li>
-        <li>remove until ide version.</li>
-      </ul>
       version 1.0: translate.<br/>
       version 2.0: change description.<br/>
       version 3.0: change name and since idea version.<br/>
@@ -49,6 +47,13 @@
       </ul>
       version 6.1:<br/>
       update until idea version, and <code>caiyun</code> service is not free.<br/>
+      version 6.2:<br/>
+      <ul>
+        <li>add format model:<code>source case, PascalCase, camelCase, snake_case, UPPER_SNAKE_CASE,nospace</code>. you can config it for settings. take a look.</li>
+        <li>change html for config description. can use default browse open link, if wrong will be writing clipboard. have a try.</li>
+        <li>change config input <code>JPasswordField -> JTextField</code>. win os can copy and paste, but mac os can not. now win and mac os can do.</li>
+        <li>remove until ide version.</li>
+      </ul>
     ]]>
     </change-notes>
 

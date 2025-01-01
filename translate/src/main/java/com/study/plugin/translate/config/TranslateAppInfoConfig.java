@@ -51,6 +51,12 @@ public class TranslateAppInfoConfig implements SearchableConfigurable, PluginApp
         ui.setHuaweijifanAppSecret(appInfoService.get(HUAWEIJIFAN_APP_SECRET_SAVE_KEY));
         ui.setAlijifanAppId(appInfoService.get(ALIJIFAN_APP_ID_SAVE_KEY));
         ui.setAlijifanAppSecret(appInfoService.get(ALIJIFAN_APP_SECRET_SAVE_KEY));
+        ui.setTencenthunyuanAppId(appInfoService.get(TENCENTHUNYUAN_APP_ID_SAVE_KEY));
+        ui.setTencenthunyuanAppSecret(appInfoService.get(TENCENTHUNYUAN_APP_SECRET_SAVE_KEY));
+        ui.setTencenthunyuanPrompt(appInfoService.get(TENCENTHUNYUAN_PROMPT_SAVE_KEY));
+        ui.setBaiduqianfanAppId(appInfoService.get(BAIDUQIANFAN_APP_ID_SAVE_KEY));
+        ui.setBaiduqianfanAppSecret(appInfoService.get(BAIDUQIANFAN_APP_SECRET_SAVE_KEY));
+        ui.setBaiduqianfanPrompt(appInfoService.get(BAIDUQIANFAN_PROMPT_SAVE_KEY));
         ui.setOutFormatCombox(appInfoService.getInt(OUTPUT_FORMAT_MODE));
         JPanel rootJPanel = ui.getRootJPanel();
         rootJPanel.revalidate();
@@ -81,6 +87,12 @@ public class TranslateAppInfoConfig implements SearchableConfigurable, PluginApp
                 !appInfoService.get(HUAWEIJIFAN_APP_SECRET_SAVE_KEY).equals(ui.getHuaweijifanAppSecret()) ||
                 !appInfoService.get(ALIJIFAN_APP_ID_SAVE_KEY).equals(ui.getAlijifanAppId()) ||
                 !appInfoService.get(ALIJIFAN_APP_SECRET_SAVE_KEY).equals(ui.getAlijifanAppSecret()) ||
+                !appInfoService.get(TENCENTHUNYUAN_APP_ID_SAVE_KEY).equals(ui.getTencenthunyuanAppId()) ||
+                !appInfoService.get(TENCENTHUNYUAN_APP_SECRET_SAVE_KEY).equals(ui.getTencenthunyuanAppSecret()) ||
+                !appInfoService.get(TENCENTHUNYUAN_PROMPT_SAVE_KEY).equals(ui.getTencenthunyuanPrompt()) ||
+                !appInfoService.get(BAIDUQIANFAN_APP_ID_SAVE_KEY).equals(ui.getBaiduqianfanAppId()) ||
+                !appInfoService.get(BAIDUQIANFAN_APP_SECRET_SAVE_KEY).equals(ui.getBaiduqianfanAppSecret()) ||
+                !appInfoService.get(BAIDUQIANFAN_PROMPT_SAVE_KEY).equals(ui.getBaiduqianfanPrompt()) ||
                 appInfoService.getInt(OUTPUT_FORMAT_MODE) != ui.getOutFormat()
                 ;
     }
@@ -146,6 +158,26 @@ public class TranslateAppInfoConfig implements SearchableConfigurable, PluginApp
             appInfoService.save(ALIJIFAN_APP_SECRET_SAVE_KEY, alijifanAppSecret);
             ApplicationManager.getApplication().getMessageBus().syncPublisher(ITranslateAppInfoConfigChange.TOPIC)
                     .alijifanChange(alijifanAppId, alijifanAppSecret);
+        }
+        String tencenthunyuanAppId = ui.getTencenthunyuanAppId();
+        String tencenthunyuanAppSecret = ui.getTencenthunyuanAppSecret();
+        String tencenthunyuanPrompt = ui.getTencenthunyuanPrompt();
+        if (StrUtil.isNotBlank(tencenthunyuanAppId) && StrUtil.isNotBlank(tencenthunyuanAppSecret)) {
+            appInfoService.save(TENCENTHUNYUAN_APP_ID_SAVE_KEY, tencenthunyuanAppId);
+            appInfoService.save(TENCENTHUNYUAN_APP_SECRET_SAVE_KEY, tencenthunyuanAppSecret);
+            appInfoService.save(TENCENTHUNYUAN_PROMPT_SAVE_KEY, tencenthunyuanPrompt);
+            ApplicationManager.getApplication().getMessageBus().syncPublisher(ITranslateAppInfoConfigChange.TOPIC)
+                    .tencenthunyuanChange(tencenthunyuanAppId, tencenthunyuanAppSecret, tencenthunyuanPrompt);
+        }
+        String baiduqianfanAppId = ui.getBaiduqianfanAppId();
+        String baiduqianfanAppSecret = ui.getBaiduqianfanAppSecret();
+        String baiduqianfanPrompt = ui.getBaiduqianfanPrompt();
+        if (StrUtil.isNotBlank(baiduqianfanAppId) && StrUtil.isNotBlank(baiduqianfanAppSecret)) {
+            appInfoService.save(BAIDUQIANFAN_APP_ID_SAVE_KEY, baiduqianfanAppId);
+            appInfoService.save(BAIDUQIANFAN_APP_SECRET_SAVE_KEY, baiduqianfanAppSecret);
+            appInfoService.save(BAIDUQIANFAN_PROMPT_SAVE_KEY, baiduqianfanPrompt);
+            ApplicationManager.getApplication().getMessageBus().syncPublisher(ITranslateAppInfoConfigChange.TOPIC)
+                    .baiduqianfanChange(baiduqianfanAppId, baiduqianfanAppSecret, baiduqianfanPrompt);
         }
         int outFormat = ui.getOutFormat();
         if (outFormat != -1) {

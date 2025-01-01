@@ -19,4 +19,8 @@ public interface ITranslateAppInfoConfigChange {
     void huaweijifanChange(String projectId,String appId, String appSecret);
 
     void alijifanChange(String appId, String appSecret);
+
+    void tencenthunyuanChange(String appId, String appSecret, String prompt);
+
+    void baiduqianfanChange(String appId, String appSecret, String prompt);
 }
