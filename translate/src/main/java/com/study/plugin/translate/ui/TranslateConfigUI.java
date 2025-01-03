@@ -46,7 +46,7 @@ public class TranslateConfigUI {
     private JEditorPane huaweijifanEditDescription;
     private JEditorPane alijifanEditDescription;
     private JTextField youdaoAppIdTextField;
-    private JPanel tencenthunyuan;
+    private JPanel tencenthunyuanJPanel;
     private JTextField tencenthunyuanAppIdTextField;
     private JTextField tencenthunyuanAppSecretTextField;
     private JEditorPane tencenthunyuanEditDescription;
@@ -55,6 +55,16 @@ public class TranslateConfigUI {
     private JTextField baiduqianfanAppSecretTextFileld;
     private JEditorPane baiduqianfanPropmtEditText;
     private JEditorPane baiduqianfanEditDecription;
+    private JPanel baiduqianfanJPanel;
+    private JPanel xunfeiJPanel;
+    private JTextField xunfeiAppKeyTextField;
+    private JTextField xunfeiAppSecretTextField;
+    private JEditorPane xunfeiEditDescription;
+    private JTextField xunfeiAppIdTextField;
+    private JPanel deepseekJPanel;
+    private JTextField deepseekAppKeyTextField;
+    private JEditorPane deepseekPromptTextEdit;
+    private JEditorPane deepseekDescriptionTextEdit;
 
     public TranslateConfigUI() {
         HyperlinkListener hyperlinkEventConsumer = (HyperlinkEvent e) -> {
@@ -79,7 +89,8 @@ public class TranslateConfigUI {
         alijifanEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
         tencenthunyuanEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
         baiduqianfanEditDecription.addHyperlinkListener(hyperlinkEventConsumer);
-
+        xunfeiEditDescription.addHyperlinkListener(hyperlinkEventConsumer);
+        deepseekDescriptionTextEdit.addHyperlinkListener(hyperlinkEventConsumer);
 
     }
 
@@ -165,6 +176,26 @@ public class TranslateConfigUI {
 
     public String getBaiduqianfanPrompt() {
         return String.valueOf(baiduqianfanPropmtEditText.getText()).trim();
+    }
+
+    public String getXunfeiAppKey() {
+        return String.valueOf(xunfeiAppKeyTextField.getText()).trim();
+    }
+
+    public String getXunfeiAppSecret() {
+        return String.valueOf(xunfeiAppSecretTextField.getText()).trim();
+    }
+
+    public String getXunfeiAppId() {
+        return String.valueOf(xunfeiAppIdTextField.getText()).trim();
+    }
+
+    public String getDeepseekAppKey() {
+        return String.valueOf(deepseekAppKeyTextField.getText()).trim();
+    }
+
+    public String getDeepseekPrompt() {
+        return String.valueOf(deepseekPromptTextEdit.getText()).trim();
     }
 
     /**
@@ -261,6 +292,26 @@ public class TranslateConfigUI {
 
     public void setBaiduqianfanPrompt(String baiduqianfanPrompt) {
         baiduqianfanPropmtEditText.setText(baiduqianfanPrompt);
+    }
+
+    public void setXunfeiAppKey(String xunfeiAppKey) {
+        xunfeiAppKeyTextField.setText(xunfeiAppKey);
+    }
+
+    public void setXunfeiAppSecret(String xunfeiAppSecret) {
+        xunfeiAppSecretTextField.setText(xunfeiAppSecret);
+    }
+
+    public void setXunfeiAppId(String xunfeiAppId) {
+        xunfeiAppIdTextField.setText(xunfeiAppId);
+    }
+
+    public void setDeepseekAppKey(String deepseekAppKey) {
+        deepseekAppKeyTextField.setText(deepseekAppKey);
+    }
+
+    public void setDeepseekPrompt(String deepseekPrompt) {
+        deepseekPromptTextEdit.setText(deepseekPrompt);
     }
 
     /**

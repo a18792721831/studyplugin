@@ -34,6 +34,8 @@ public class TranslateAction extends AnAction implements PluginAppKeys {
     private AlijifanTranslateRestService alijifanTranslateRestService = application.getService(AlijifanTranslateRestService.class);
     private TencenthunyuanTranslateRestService tencenthunyuanTranslateRestService = application.getService(TencenthunyuanTranslateRestService.class);
     private BaiduYi34BTranslateRestService baiduYi34BTranslateRestService = application.getService(BaiduYi34BTranslateRestService.class);
+    private XunfeiTranslateRestService xunfeiTranslateRestService = application.getService(XunfeiTranslateRestService.class);
+    private DeepseekTranslateRestService deepseekTranslateRestService = application.getService(DeepseekTranslateRestService.class);
     // 持有所有的服务
     private final List<TranslateRestService> allService = Lists.newArrayList(
             youdaoTranslateRestService,
@@ -43,7 +45,10 @@ public class TranslateAction extends AnAction implements PluginAppKeys {
             huaweijifanTranslateRestService,
             alijifanTranslateRestService,
             tencenthunyuanTranslateRestService,
-            baiduYi34BTranslateRestService);
+            baiduYi34BTranslateRestService,
+            xunfeiTranslateRestService,
+            deepseekTranslateRestService
+    );
     private TranslateAppInfoService appInfoService = application.getService(TranslateAppInfoService.class);
     private CamelCaseFormat camelCaseFormat = application.getService(CamelCaseFormat.class);
     private NoSpaceFormat noSpaceFormat = application.getService(NoSpaceFormat.class);

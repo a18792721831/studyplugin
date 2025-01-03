@@ -26,6 +26,10 @@ public class TranslateAppInfoConfigChangeListener implements ITranslateAppInfoCo
 
     private BaiduYi34BTranslateRestService baiduYi34BTranslateRestService = application.getService(BaiduYi34BTranslateRestService.class);
 
+    private XunfeiTranslateRestService xunfeiTranslateRestService = application.getService(XunfeiTranslateRestService.class);
+
+    private DeepseekTranslateRestService deepseekTranslateRestService = application.getService(DeepseekTranslateRestService.class);
+
     @Override
     public void youdaoChange(String appId, String appSecret) {
         youdaoTranslateRestService.setAPP_ID(appId);
@@ -79,6 +83,19 @@ public class TranslateAppInfoConfigChangeListener implements ITranslateAppInfoCo
         baiduYi34BTranslateRestService.setAPP_ID(appId);
         baiduYi34BTranslateRestService.setAPP_SECRET(appSecret);
         baiduYi34BTranslateRestService.setPROMPT(prompt);
+    }
+
+    @Override
+    public void xunfeiChange(String appId,String appKey, String appSecret) {
+        xunfeiTranslateRestService.setAPP_ID(appId);
+        xunfeiTranslateRestService.setAPP_KEY(appKey);
+        xunfeiTranslateRestService.setAPP_SECRET(appSecret);
+    }
+
+    @Override
+    public void deepseekChange(String appKey, String prompt) {
+        deepseekTranslateRestService.setAPP_KEY(appKey);
+        deepseekTranslateRestService.setAPP_PROMPT(prompt);
     }
 
 

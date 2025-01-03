@@ -3,14 +3,14 @@
   <grid id="27dc6" binding="rootJPanel" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="950" height="2319"/>
+      <xy x="20" y="20" width="1058" height="2319"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
       <tabbedpane id="ca04c" binding="translateConfigTabedPanel">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="1" use-parent-layout="false"/>
         </constraints>
         <properties>
           <enabled value="true"/>
@@ -544,7 +544,7 @@
               </component>
             </children>
           </grid>
-          <grid id="f34df" binding="tencenthunyuan" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="f34df" binding="tencenthunyuanJPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="腾讯混元"/>
@@ -619,7 +619,7 @@
               </hspacer>
             </children>
           </grid>
-          <grid id="a9e45" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="a9e45" binding="baiduqianfanJPanel" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="百度千帆"/>
@@ -695,6 +695,150 @@
                   <contentType value="text/html"/>
                   <editable value="false"/>
                   <text value="&lt;html&gt;&#10;  &lt;head&gt;&#10;    &#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;p style=&quot;margin-top: 0&quot;&gt;&#10;      &amp;#30334;&amp;#24230;&amp;#21315;&amp;#24070;&amp;#22823;&amp;#27169;&amp;#22411;&amp;#38656;&amp;#35201;&amp;#21040;&lt;br&gt;&lt;a href=&quot;https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application&quot;&gt;https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application&lt;/a&gt;&lt;br&gt;&amp;#36827;&amp;#34892;&amp;#24320;&amp;#36890;&amp;#36141;&amp;#20080;&amp;#12290;&lt;br&gt;&amp;#22312;&amp;#25105;&amp;#30340;&amp;#24212;&amp;#29992;&lt;br&gt;&lt;a href=&quot;https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application/v1&quot;&gt;https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application/v1&lt;/a&gt;&lt;br&gt;&amp;#21019;&amp;#24314;&amp;#65292;&amp;#21019;&amp;#24314;&amp;#30340;&amp;#26102;&amp;#20505;&amp;#35760;&amp;#24471;&amp;#21482;&amp;#36873;&amp;#25321;Yi-34B-Chat&amp;#65292;&amp;#36825;&amp;#20010;&amp;#26159;&amp;#20813;&amp;#36153;&amp;#30340;&amp;#12290;&lt;br&gt;&amp;#23436;&amp;#20840;&amp;#19981;&amp;#24314;&amp;#35758;&amp;#20351;&amp;#29992;&amp;#65292;&amp;#22826;&amp;#25289;&amp;#36328;&amp;#20102;&amp;#12290;&#10;    &lt;/p&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;&#10;"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="4fd06" binding="xunfeiJPanel" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="讯飞机翻"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="361b2" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="应用KEY："/>
+                </properties>
+              </component>
+              <hspacer id="d744a">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <vspacer id="a082b">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="dead1" class="javax.swing.JTextField" binding="xunfeiAppKeyTextField">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="cdfbc" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="应用Secret："/>
+                </properties>
+              </component>
+              <component id="a5046" class="javax.swing.JTextField" binding="xunfeiAppSecretTextField">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="a6425" class="javax.swing.JEditorPane" binding="xunfeiEditDescription">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <contentType value="text/html"/>
+                  <editable value="false"/>
+                  <text value="&lt;html&gt;&#10;  &lt;head&gt;&#10;    &#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;p style=&quot;margin-top: 0&quot;&gt;&#10;      &amp;#20808;&amp;#27880;&amp;#20876;&amp;#24182;&amp;#23454;&amp;#21517;&amp;#35748;&amp;#35777;&lt;br&gt;&lt;a href=&quot;https://www.xfyun.cn/&quot;&gt;https://www.xfyun.cn/&lt;/a&gt;&lt;br&gt;&amp;#23454;&amp;#21517;&amp;#36890;&amp;#36807;&amp;#21518;&amp;#65292;&amp;#21487;&amp;#20197;&amp;#22312;&lt;br&gt;&lt;a href=&quot;https://www.xfyun.cn/services/xftrans&quot;&gt;https://www.xfyun.cn/services/xftrans&lt;/a&gt;&lt;br&gt;&amp;#39046;&amp;#21462;&amp;#19968;&amp;#24180;&amp;#25110;200&amp;#19975;&amp;#23383;&amp;#31526;&amp;#12290;&lt;br&gt;&amp;#22312;&lt;br&gt;&lt;a href=&quot;https://console.xfyun.cn/services/its&quot;&gt;https://console.xfyun.cn/services/its&lt;/a&gt;&lt;br&gt;&amp;#33719;&amp;#21462;APIKey&amp;#21644;APISecret&amp;#12290;&#10;    &lt;/p&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;&#10;"/>
+                </properties>
+              </component>
+              <component id="acd4d" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="应用ID："/>
+                </properties>
+              </component>
+              <component id="e2351" class="javax.swing.JTextField" binding="xunfeiAppIdTextField">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+            </children>
+          </grid>
+          <grid id="e492f" binding="deepseekJPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="deepseek"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="991ba" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="应用Key："/>
+                </properties>
+              </component>
+              <hspacer id="19544">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <vspacer id="16359">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="1f13a" class="javax.swing.JTextField" binding="deepseekAppKeyTextField">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="69fcf" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="自定义Prompt："/>
+                </properties>
+              </component>
+              <component id="4111a" class="javax.swing.JEditorPane" binding="deepseekPromptTextEdit">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="e5b87" class="javax.swing.JEditorPane" binding="deepseekDescriptionTextEdit">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <contentType value="text/html"/>
+                  <editable value="false"/>
+                  <text value="&lt;html&gt;&#10;  &lt;head&gt;&#10;    &#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;p style=&quot;margin-top: 0&quot;&gt;&#10;      deepseek-v3 &amp;#26159;&amp;#26368;&amp;#36817;&amp;#22269;&amp;#20869;&amp;#24320;&amp;#28304;&amp;#30340;&amp;#26368;&amp;#28779;&amp;#30340;&amp;#22823;&amp;#27169;&amp;#22411;&amp;#20102;&lt;br&gt;&lt;a href=&quot;https://www.deepseek.com/&quot;&gt;https://www.deepseek.com/&lt;/a&gt;&lt;br&gt;&amp;#27880;&amp;#20876;&amp;#21518;&amp;#20250;&amp;#36192;&amp;#36865;500&amp;#19975;token&amp;#30340;&amp;#39069;&amp;#24230;&amp;#65292;&amp;#26377;&amp;#25928;&amp;#26399;&amp;#33267;&lt;font color=&quot;red&quot;&gt;2025-2-1&lt;/font&gt;&lt;br&gt;&amp;#38656;&amp;#35201;&amp;#22312;&lt;br&gt;&lt;a href=&quot;https://platform.deepseek.com/api_keys&quot;&gt;https://platform.deepseek.com/api_keys&lt;/a&gt;&lt;br&gt;&amp;#21019;&amp;#24314;apiKey&amp;#65292;&amp;#24182;&amp;#19988;&amp;#36825;&amp;#20010;apiKey&amp;#21482;&amp;#20250;&amp;#22312;&amp;#21019;&amp;#24314;&amp;#30340;&amp;#26102;&amp;#20505;&lt;font color=&quot;red&quot;&gt;&amp;#23637;&amp;#31034;&amp;#19968;&amp;#27425;&lt;/font&gt;&amp;#65292;&amp;#25152;&amp;#20197;&amp;#19968;&amp;#23450;&amp;#20445;&amp;#23384;&amp;#22909;&amp;#65292;&amp;#21542;&amp;#21017;&amp;#21482;&amp;#33021;&amp;#37325;&amp;#26032;&amp;#21019;&amp;#24314;&amp;#65292;&amp;#20063;&amp;#19981;&amp;#35201;&amp;#27844;&amp;#38706;&amp;#12290;&#10;    &lt;/p&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;&#10;"/>
                 </properties>
               </component>
             </children>

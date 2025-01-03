@@ -26,6 +26,11 @@ public interface PluginAppKeys {
     String BAIDUQIANFAN_PROMPT_SAVE_KEY = "com.study.plugin.translate.baiduqianfan.prompt";
     String BAIDUQIANFAN_ACCESSTOKEN_SAVE_KEY = "com.study.plugin.translate.baiduqianfan.accesstoken";
     String BAIDUQIANFAN_ACCESSTOKEN_EXPTIME_SAVE_KEY = "com.study.plugin.translate.baiduqianfan.accesstoken.exptime";
+    String XUNFEI_APP_ID_SAVE_KEY = "com.study.plugin.translate.xunfei.app.id";
+    String XUNFEI_APP_KEY_SAVE_KEY = "com.study.plugin.translate.xunfei.app.key";
+    String XUNFEI_APP_SECRET_SAVE_KEY = "com.study.plugin.translate.xunfei.app.secret";
+    String DEEPSEEK_APP_KEY_SAVE_KEY = "com.study.plugin.translate.deepseek.app.key";
+    String DEEPSEEK_PROMPT_SAVE_KEY = "com.study.plugin.translate.deepseek.prompt";
     /**
      * 原文(xx yy)
      * 大驼峰(XxYy)

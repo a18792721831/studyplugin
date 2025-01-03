@@ -16,6 +16,8 @@
         <ul>
           <li>add <code>tencent hunyuan ai translate</code></li>
           <li>add <code>baidu qianfan ai translate</code></li>
+          <li>add <code>xunfei fanyi translate</code></li>
+          <li>add <code>deepseek-v ai translate</code></li>
         </ul>
       version 6.3:<br/>
         fix StringUtils.</br/>

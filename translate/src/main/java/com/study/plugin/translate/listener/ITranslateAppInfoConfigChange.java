@@ -23,4 +23,8 @@ public interface ITranslateAppInfoConfigChange {
     void tencenthunyuanChange(String appId, String appSecret, String prompt);
 
     void baiduqianfanChange(String appId, String appSecret, String prompt);
+
+    void xunfeiChange(String appId,String appKey, String appSecret);
+
+    void deepseekChange(String appKey,String prompt);
 }

@@ -57,6 +57,11 @@ public class TranslateAppInfoConfig implements SearchableConfigurable, PluginApp
         ui.setBaiduqianfanAppId(appInfoService.get(BAIDUQIANFAN_APP_ID_SAVE_KEY));
         ui.setBaiduqianfanAppSecret(appInfoService.get(BAIDUQIANFAN_APP_SECRET_SAVE_KEY));
         ui.setBaiduqianfanPrompt(appInfoService.get(BAIDUQIANFAN_PROMPT_SAVE_KEY));
+        ui.setXunfeiAppId(appInfoService.get(XUNFEI_APP_ID_SAVE_KEY));
+        ui.setXunfeiAppKey(appInfoService.get(XUNFEI_APP_KEY_SAVE_KEY));
+        ui.setXunfeiAppSecret(appInfoService.get(XUNFEI_APP_SECRET_SAVE_KEY));
+        ui.setDeepseekAppKey(appInfoService.get(DEEPSEEK_APP_KEY_SAVE_KEY));
+        ui.setDeepseekPrompt(appInfoService.get(DEEPSEEK_PROMPT_SAVE_KEY));
         ui.setOutFormatCombox(appInfoService.getInt(OUTPUT_FORMAT_MODE));
         JPanel rootJPanel = ui.getRootJPanel();
         rootJPanel.revalidate();
@@ -93,6 +98,11 @@ public class TranslateAppInfoConfig implements SearchableConfigurable, PluginApp
                 !appInfoService.get(BAIDUQIANFAN_APP_ID_SAVE_KEY).equals(ui.getBaiduqianfanAppId()) ||
                 !appInfoService.get(BAIDUQIANFAN_APP_SECRET_SAVE_KEY).equals(ui.getBaiduqianfanAppSecret()) ||
                 !appInfoService.get(BAIDUQIANFAN_PROMPT_SAVE_KEY).equals(ui.getBaiduqianfanPrompt()) ||
+                !appInfoService.get(XUNFEI_APP_ID_SAVE_KEY).equals(ui.getXunfeiAppId()) ||
+                !appInfoService.get(XUNFEI_APP_KEY_SAVE_KEY).equals(ui.getXunfeiAppKey()) ||
+                !appInfoService.get(XUNFEI_APP_SECRET_SAVE_KEY).equals(ui.getXunfeiAppSecret()) ||
+                !appInfoService.get(DEEPSEEK_APP_KEY_SAVE_KEY).equals(ui.getDeepseekAppKey()) ||
+                !appInfoService.get(DEEPSEEK_PROMPT_SAVE_KEY).equals(ui.getDeepseekPrompt()) ||
                 appInfoService.getInt(OUTPUT_FORMAT_MODE) != ui.getOutFormat()
                 ;
     }
@@ -178,6 +188,24 @@ public class TranslateAppInfoConfig implements SearchableConfigurable, PluginApp
             appInfoService.save(BAIDUQIANFAN_PROMPT_SAVE_KEY, baiduqianfanPrompt);
             ApplicationManager.getApplication().getMessageBus().syncPublisher(ITranslateAppInfoConfigChange.TOPIC)
                     .baiduqianfanChange(baiduqianfanAppId, baiduqianfanAppSecret, baiduqianfanPrompt);
+        }
+        String xunfeiAppId = ui.getXunfeiAppId();
+        String xunfeiAppKey = ui.getXunfeiAppKey();
+        String xunfeiAppSecret = ui.getXunfeiAppSecret();
+        if (StrUtil.isNotBlank(xunfeiAppId) && StrUtil.isNotBlank(xunfeiAppSecret)) {
+            appInfoService.save(XUNFEI_APP_ID_SAVE_KEY, xunfeiAppId);
+            appInfoService.save(XUNFEI_APP_KEY_SAVE_KEY, xunfeiAppKey);
+            appInfoService.save(XUNFEI_APP_SECRET_SAVE_KEY, xunfeiAppSecret);
+            ApplicationManager.getApplication().getMessageBus().syncPublisher(ITranslateAppInfoConfigChange.TOPIC)
+                    .xunfeiChange(xunfeiAppId, xunfeiAppKey, xunfeiAppSecret);
+        }
+        String deepseekAppKey = ui.getDeepseekAppKey();
+        String deepseekPrompt = ui.getDeepseekPrompt();
+        if (StrUtil.isNotBlank(deepseekAppKey)) {
+            appInfoService.save(DEEPSEEK_APP_KEY_SAVE_KEY, deepseekAppKey);
+            appInfoService.save(DEEPSEEK_PROMPT_SAVE_KEY, deepseekPrompt);
+            ApplicationManager.getApplication().getMessageBus().syncPublisher(ITranslateAppInfoConfigChange.TOPIC)
+                    .deepseekChange(deepseekAppKey, deepseekPrompt);
         }
         int outFormat = ui.getOutFormat();
         if (outFormat != -1) {
